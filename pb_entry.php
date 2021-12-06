@@ -16,6 +16,8 @@
                 } else if ($url[0] == 'configuration') {
                     array_shift($url);
                     Header::Location('/pb-dashboard/module-config/scoreboard/' . join('/', $url));
+                } else if ($url[0] == 'signup') {
+                    Request::rewrite('/pb-loader/module/scoreboard/signup');
                 }
             });
         }
