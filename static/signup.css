@@ -67,9 +67,9 @@ form section.finish-signup .button {
     background-color: #000;
     text-align: center;
     line-height: 50px;
-    transition: background-color .1s ease;
     border: 5px solid #393939;
     cursor: pointer;
+    border-radius: 15px;
 }
 
 form section.finish-signup .button:hover {
