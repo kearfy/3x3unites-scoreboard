@@ -36,7 +36,6 @@ form section.title {
 
 form section.title h1 {
     font-size: 30px;
-    /* text-transform: uppercase; */
 }
 
 form section.input-fields {
@@ -82,3 +81,25 @@ form section.finish-signup .button:active {
     background-color: #000;
 }
 
+@media (max-width: 400px) {
+    form {
+        width: calc(100% - 100px);
+        min-height: calc(100vh - 85px);
+        padding: 25px;
+        margin: 35px auto 0px auto;
+    }
+
+    form section.logo {
+        height: 100px;
+        padding-top: 10px;
+        padding-bottom: 35px;
+    }
+
+    form section.title {
+        padding-bottom: 40px;
+    }
+    
+    form section.title h1 {
+        font-size: 24px;
+    }
+}
