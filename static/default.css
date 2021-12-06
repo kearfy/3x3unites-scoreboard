@@ -1,0 +1,15 @@
+@font-face {
+    font-family: Circular Std Black;
+    src: url("./CircularStd-Black.otf") format("opentype");
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Circular Std Black", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+}
+
+body {
+    background: #222;
+}
