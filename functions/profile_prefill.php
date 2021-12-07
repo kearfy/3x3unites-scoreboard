@@ -32,11 +32,15 @@
             <section class="input-fields">
                 <div class="radio-gender">
                     <input type="radio" name="gender" id="male" value="male" checked>
-                    <label for="male">Male</label>
+                    <label for="male">Man</label>
                 </div>
                 <div class="radio-gender">
                     <input type="radio" name="gender" id="female" value="female">
-                    <label for="female">Female</label>
+                    <label for="female">Vrouw</label>
+                </div>
+                <div class="radio-gender">
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">Anders</label>
                 </div>
                 
                 <input type="text" placeholder="Lengte (cm)" name="height">
