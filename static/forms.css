@@ -1,36 +1,16 @@
-body {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
-}
-
 form {
     width: calc(90% - 100px);
     max-width: 600px;
     min-height: calc(90vh - 100px);
     padding: 50px;
     margin: 10vh auto 0px auto;
-    background: linear-gradient(0deg, #202020, #2f2f2f, #333);
+    background-color: #393939;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 
     -webkit-box-shadow: 0px 5px 35px -10px rgba(0,0,0,0.85);
     -moz-box-shadow: 0px 5px 35px -10px rgba(0,0,0,0.85);
     box-shadow: 0px 5px 35px -10px rgba(0,0,0,0.85);
-
-    transition: bottom .9s ease, opacity 1.2s ease;
-    opacity: 1;
-
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
-form.unload {
-    opacity: 0;
-    bottom: -15vh;
 }
 
 form section.logo {
@@ -51,27 +31,19 @@ form section.title {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-bottom: 25px;
+    padding-bottom: 50px;
 }
 
 form section.title h1 {
     font-size: 30px;
 }
 
-form .error-message {
-    width: 100%;
-    text-align: center;
-    color: red;
-    padding-bottom: 10px;
-}
-
 form section.input-fields {
     width: 100%;
-    padding-top: 25px;
     padding-bottom: 20px;
 }
 
-form section.input-fields input {
+form section.input-fields input:not([type=radio]) {
     width: calc(100% - 50px);
     padding: 15px 25px;
     background: #ddd;
@@ -83,6 +55,20 @@ form section.input-fields input {
     border-radius: 10px;
 }
 
+form section.input-fields h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+form section.input-fields .radio-gender {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+form section.input-fields .gender-selection {
+    padding-bottom: 10px;
+}
+
 form section.finish-signup {
     width: 100%;
     display: flex;
@@ -91,18 +77,18 @@ form section.finish-signup {
 
 form section.finish-signup .button {
     width: 250px;
-    height: 60px;
+    height: 50px;
     background-color: #000;
     text-align: center;
     line-height: 50px;
-    border: 3px solid #888;
+    border: 5px solid #393939;
     cursor: pointer;
     border-radius: 15px;
 }
 
 form section.finish-signup .button:hover {
-    background-color: transparent;
-    border: 3px solid #000;
+    background-color: #393939;
+    border: 5px solid #000;
 }
 
 form section.finish-signup .button:active {
