@@ -16,7 +16,7 @@
             $res = $users->create($postdata);
             if ($res->success) {
                 $users->metaSet($res->id, 'type', 'player');
-                Header::Location(SITE_LOCATION . '/signup?success');
+                Header::Location(SITE_LOCATION . '/signup/profile-prefill');
             } else {
                 Header::Location(SITE_LOCATION . '/signup?error=' . $res->error . '&message=' . $res->message);
             }
