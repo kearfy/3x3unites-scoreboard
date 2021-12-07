@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -13,11 +9,11 @@
         <link rel="stylesheet" href="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.css">
         <link rel="stylesheet" href="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/pages.css">
     </head>
-    <body>
-        <p>
-            <div class="notready">
-                &#9814;We're sorry. This website is not ready yet but will be ready shortly.&#9814;
-            </div>
-        </p>
+    <body class="homepage">
+        <div class="notready">
+            <p>
+                &#9814; We're sorry. This website is not ready yet but will be ready shortly. &#9814;
+            </p>
+        </div>
     </body>
 </html>
