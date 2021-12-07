@@ -1,0 +1,9 @@
+body {
+	background-color: #222;
+}
+
+.notready {
+	display: flex;
+	justify-content: center;
+
+}
