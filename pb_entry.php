@@ -26,6 +26,8 @@
                     } else {
                         Request::rewrite('/pb-loader/module/scoreboard/signup');
                     }
+                } else if ($url[0] == 'signin') {
+                    Request::rewrite('/pb-loader/module/scoreboard/signin');
                 }
             });
         }
