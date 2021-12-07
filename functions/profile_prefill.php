@@ -30,6 +30,9 @@
                 </h1>
             </section>
             <section class="input-fields">
+                <h3>
+                    Geslacht
+                </h3>
                 <div class="radio-gender">
                     <input type="radio" name="gender" id="male" value="male" checked>
                     <label for="male">Man</label>
@@ -43,7 +46,8 @@
                     <label for="female">Anders</label>
                 </div>
                 
-                <input type="text" placeholder="Lengte (cm)" name="height">
+                <input type="number" placeholder="Leeftijd" name="age">
+                <input type="number" placeholder="Lengte (cm)" name="height">
                 <input type="text" placeholder="Vereneging" name="club">
                 <input type="text" placeholder="Team (u18-1)" name="team">
                 <input type="text" placeholder="competitie" name="competition">
