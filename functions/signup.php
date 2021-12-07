@@ -2,10 +2,8 @@
 
     use Helper\Request;
 
-    function start_function($params) {
-        if (Request::method() == 'POST') {
-            echo 'no';
-        }
+    if (Request::method() == 'POST') {
+        echo 'no';
     }
 
 ?>

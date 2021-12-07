@@ -1,5 +1,3 @@
 <?php
-    function start_function($params) {
-        echo 'Im sory is not ready yet will be ready soon.';
-    }
+    echo 'We\'re sorry. This website is not ready yet but will be ready shortly.';
 ?>

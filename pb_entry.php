@@ -27,10 +27,10 @@
                 http_response_code(400);
                 Respond::error("missing_function", "No function parameter was provided.");
             } else {
-                if (file_exists(__DIR__ . '/functions/' . $params[0] . '.php')) {
-                    require __DIR__ . '/functions/' . $params[0] . '.php';
-                    array_shift($params);
-                    start_function($params);
+                $func = $params[0];
+                array_shift($params);
+                if (file_exists(__DIR__ . '/functions/' . $func . '.php')) {
+                    require __DIR__ . '/functions/' . $func . '.php';
                 } else {
                     http_response_code(404);
                     Respond::error("unknown_function", "An unknown function was provided.");
