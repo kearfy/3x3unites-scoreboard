@@ -17,7 +17,15 @@
                     array_shift($url);
                     Header::Location('/pb-dashboard/module-config/scoreboard/' . join('/', $url));
                 } else if ($url[0] == 'signup') {
-                    Request::rewrite('/pb-loader/module/scoreboard/signup');
+                    if (isset($url[1])) {
+                        if ($url[1] == 'profile-prefill') {
+                            Request::rewrite('/pb-loader/module/scoreboard/profile_prefill');
+                        } else {
+                            Request::rewrite('/pb-loader/module/scoreboard/signup');
+                        }
+                    } else {
+                        Request::rewrite('/pb-loader/module/scoreboard/signup');
+                    }
                 }
             });
         }
