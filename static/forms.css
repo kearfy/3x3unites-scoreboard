@@ -23,7 +23,7 @@ form {
     transition: bottom .9s ease, opacity 1.2s ease;
     opacity: 1;
 
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     right: 0;
@@ -36,6 +36,38 @@ form::-webkit-scrollbar {
 form.unload {
     opacity: 0;
     bottom: -15vh;
+}
+
+form .page-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 22px;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #222;
+    border-radius: 10px;
+    border-bottom: 3px solid #111;
+    cursor: pointer;
+
+    transition: border-radius .2s ease, background-color .2s ease;
+}
+
+form .page-back:active {
+    margin-top: 25px;
+    border: none;
+}
+
+form .page-back:not(:hover) {
+    border-radius: 50%;
+    background-color: transparent;
+    border-bottom: 0px;
+}
+
+form .page-back svg {
+    width: 30px;
+    height: 30px;
 }
 
 form section.logo {

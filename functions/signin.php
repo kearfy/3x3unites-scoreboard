@@ -11,6 +11,10 @@
     </head>
     <body>
         <form class="unload" action="<?php echo SITE_LOCATION; ?>/pb-loader/module/scoreboard/signin" method="post">
+            <div class="page-back">
+                <i data-feather="arrow-left"></i>
+            </div>
+
             <section class="logo">
                 <img src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/logo_white.svg" alt="">
             </section>
@@ -39,12 +43,19 @@
             </section>
         </form>
 
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', (event) => {
                 setTimeout(() => {
                     document.querySelector("form.unload").classList.remove('unload');
                 }, 800);
             });
+
+            document.querySelector('.page-back').addEventListener('click', e => {
+                history.back();
+            });
+
+            feather.replace();
         </script>
     </body>
 </html>
