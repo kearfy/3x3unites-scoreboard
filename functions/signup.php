@@ -41,7 +41,7 @@
         <link rel="stylesheet" href="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/signup.css">
     </head>
     <body>
-        <form action="<?php echo SITE_LOCATION; ?>/pb-loader/module/scoreboard/signup" method="post">
+        <form class="unload" action="<?php echo SITE_LOCATION; ?>/pb-loader/module/scoreboard/signup" method="post">
             <section class="logo">
                 <img src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/logo_white.svg" alt="">
             </section>
@@ -71,5 +71,13 @@
                 </button>
             </section>
         </form>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                setTimeout(() => {
+                    document.querySelector("form.unload").classList.remove('unload');
+                }, 800);
+            });
+        </script>
     </body>
 </html>
