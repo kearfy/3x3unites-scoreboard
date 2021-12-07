@@ -71,7 +71,7 @@ form section.input-fields {
     padding-bottom: 20px;
 }
 
-form section.input-fields input {
+form section.input-fields input:not([type=radio]) {
     width: calc(100% - 50px);
     padding: 15px 25px;
     background: #ddd;
@@ -81,6 +81,20 @@ form section.input-fields input {
     color: black;
     font-size: 15px;
     border-radius: 10px;
+}
+
+form section.input-fields h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+form section.input-fields .radio-gender {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+form section.input-fields .gender-selection {
+    padding-bottom: 10px;
 }
 
 form section.finish-signup {
