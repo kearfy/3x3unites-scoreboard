@@ -55,6 +55,20 @@ form section.input-fields input:not([type=radio]) {
     border-radius: 10px;
 }
 
+form section.input-fields h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+form section.input-fields .radio-gender {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+form section.input-fields .gender-selection {
+    padding-bottom: 10px;
+}
+
 form section.finish-signup {
     width: 100%;
     display: flex;

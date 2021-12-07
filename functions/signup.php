@@ -1,9 +1,30 @@
 <?php
 
+    use Helper\Validate;
     use Helper\Request;
+    use Helper\Header;
+    use Library\Users;
+
+    $postdata = Request::parsePost();
+    $dataset = array('firstname', 'lastname', 'email', 'password');
 
     if (Request::method() == 'POST') {
-        echo 'no';
+        $postdata = (object) Validate::removeUnlisted($dataset, $postdata);
+        $missing = Validate::listMissing($dataset, $postdata);
+        if (count($missing) == 0) {
+            $users = new Users;
+            $res = $users->create($postdata);
+            if ($res->success) {
+                $users->metaSet($res->id, 'type', 'player');
+                Header::Location(SITE_LOCATION . '/signup?success');
+            } else {
+                Header::Location(SITE_LOCATION . '/signup?error=' . $res->error . '&message=' . $res->message);
+            }
+        } else {
+            Header::Location(SITE_LOCATION . '/signup?error=missing_information&missing=' . join('-', $missing));
+        }
+
+        die();
     }
 
 ?>
@@ -20,7 +41,7 @@
         <link rel="stylesheet" href="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/forms.css">
     </head>
     <body>
-        <form action="<?php echo SITE_LOCATION; ?>/pb-loader/module/scoreboard/signup" method="post">
+        <form class="unload" action="<?php echo SITE_LOCATION; ?>/pb-loader/module/scoreboard/signup" method="post">
             <section class="logo">
                 <img src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/logo_white.svg" alt="">
             </section>
@@ -29,17 +50,34 @@
                     Account aanmaken
                 </h1>
             </section>
+
+            <?php
+                if (isset($_GET['error']) || isset($_GET['message'])) {
+                    if (!isset($_GET['error'])) $_GET['error'] = 'error';
+                    if (!isset($_GET['message'])) $_GET['message'] = 'An error occured';
+                    echo '<p class="error-message">' . $_GET['message'] . ' (' . $_GET['error'] . ')</p>';
+                }
+            ?>
+
             <section class="input-fields">
-                <input type="text" placeholder="Voornaam" name="firstname">
-                <input type="text" placeholder="Achternaam" name="lastname">
-                <input type="email" placeholder="E-mailadres" name="email">
-                <input type="password" placeholder="Wachtwoord" name="password">
+                <input type="text" placeholder="Voornaam" name="firstname" required>
+                <input type="text" placeholder="Achternaam" name="lastname" required>
+                <input type="email" placeholder="E-mailadres" name="email" required>
+                <input type="password" placeholder="Wachtwoord" name="password" required>
             </section>
             <section class="finish-signup">
-                <div class="button">
+                <button class="button">
                     Doorgaan
-                </div>
+                </button>
             </section>
         </form>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                setTimeout(() => {
+                    document.querySelector("form.unload").classList.remove('unload');
+                }, 800);
+            });
+        </script>
     </body>
 </html>

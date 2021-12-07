@@ -30,20 +30,22 @@
                 </h1>
             </section>
             <section class="input-fields">
-                <h3>
-                    Geslacht
-                </h3>
-                <div class="radio-gender">
-                    <input type="radio" name="gender" id="male" value="male" checked>
-                    <label for="male">Man</label>
-                </div>
-                <div class="radio-gender">
-                    <input type="radio" name="gender" id="female" value="female">
-                    <label for="female">Vrouw</label>
-                </div>
-                <div class="radio-gender">
-                    <input type="radio" name="gender" id="female" value="female">
-                    <label for="female">Anders</label>
+                <div class="gender-selection">
+                    <h3>
+                        Geslacht
+                    </h3>
+                    <div class="radio-gender">
+                        <input type="radio" name="gender" id="male" value="male" checked>
+                        <label for="male">Man</label>
+                    </div>
+                    <div class="radio-gender">
+                        <input type="radio" name="gender" id="female" value="female">
+                        <label for="female">Vrouw</label>
+                    </div>
+                    <div class="radio-gender">
+                        <input type="radio" name="gender" id="female" value="female">
+                        <label for="female">Anders</label>
+                    </div>
                 </div>
                 
                 <input type="number" placeholder="Leeftijd" name="age">
