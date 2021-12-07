@@ -1,11 +1,9 @@
 <?php
-
     use Helper\Request;
 
     if (Request::method() == 'POST') {
         echo 'no';
     }
-
 ?>
 
 <!DOCTYPE html>
