@@ -30,7 +30,7 @@
         
         <div class="notready">
             <p>
-                &#9814; We're sorry. This website is not ready yet but will be ready shortly. &#9814; I love u
+                &#9814; We're sorry. This website is not ready yet but will be ready shortly. &#9814;
             </p>
         </div>
     </body>
