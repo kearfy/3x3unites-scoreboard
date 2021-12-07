@@ -53,9 +53,9 @@
                 <input type="text" placeholder="competitie" name="competition">
             </section>
             <section class="finish-signup">
-                <div class="button">
+                <button class="button">
                     Opslaan
-                </div>
+                </button>
             </section>
         </form>
 
