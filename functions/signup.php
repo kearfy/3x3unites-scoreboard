@@ -55,9 +55,8 @@
                 if (isset($_GET['error']) || isset($_GET['message'])) {
                     if (!isset($_GET['error'])) $_GET['error'] = 'error';
                     if (!isset($_GET['message'])) $_GET['message'] = 'An error occured';
+                    echo '<p class="error-message">' . $_GET['message'] . ' (' . $_GET['error'] . ')</p>';
                 }
-
-                echo '<p class="error-message">' . $_GET['message'] . ' (' . $_GET['error'] . ')</p>';
             ?>
 
             <section class="input-fields">

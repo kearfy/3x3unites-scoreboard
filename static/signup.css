@@ -31,15 +31,23 @@ form section.title {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
 }
 
 form section.title h1 {
     font-size: 30px;
 }
 
+form .error-message {
+    width: 100%;
+    text-align: center;
+    color: red;
+    padding-bottom: 10px;
+}
+
 form section.input-fields {
     width: 100%;
+    padding-top: 25px;
     padding-bottom: 20px;
 }
 
