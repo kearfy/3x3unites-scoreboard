@@ -41,8 +41,8 @@
                         <label for="female">Vrouw</label>
                     </div>
                     <div class="radio-gender">
-                        <input type="radio" name="gender" id="female" value="female">
-                        <label for="female">Anders</label>
+                        <input type="radio" name="gender" id="other" value="other">
+                        <label for="other">Anders</label>
                     </div>
                 </div>
                 
