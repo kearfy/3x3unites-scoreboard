@@ -13,7 +13,7 @@
         <nav>
             <section class="left">
                 <a href="/signup">
-                    Account maken (spelers)
+                    Registreren
                 </a>
             </section>
             <section class="middle">
