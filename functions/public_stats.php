@@ -9,7 +9,25 @@
         <link rel="stylesheet" href="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.css">
         <link rel="stylesheet" href="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/pages.css">
     </head>
-    <body class="homepage">
+    <body>
+        <nav>
+            <section class="left">
+                <a href="/signup">
+                    Account maken (spelers)
+                </a>
+            </section>
+            <section class="middle">
+                <div class="logo-container">
+                    <img src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/logo_white.svg" alt="3x3unites logo">
+                </div>
+            </section>
+            <section class="right">
+                <a href="/signin">
+                    Inloggen
+                </a>
+            </section>
+        </nav>
+        
         <div class="notready">
             <p>
                 &#9814; We're sorry. This website is not ready yet but will be ready shortly. &#9814;
