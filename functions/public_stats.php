@@ -1,4 +1,5 @@
 <?php
     function start_function($params) {
-        echo 'Not ready yet. xx Hessel & Micha';
+        echo 'Im sory is not ready yet will be ready soon.';
     }
+?>
