@@ -44,6 +44,17 @@ nav .logo-container img {
 
 nav > section {
 	display: flex;
+	width: 50%;
+}
+
+nav > section.middle {
+	width: 104px;
+	min-width: 104px;
+	justify-self: center;
+}
+
+nav > section.right {
+	justify-content: flex-end;
 }
 
 nav > section a:not(:last-child) {
