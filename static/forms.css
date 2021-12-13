@@ -99,11 +99,27 @@ form section.title h1 {
     font-size: 30px;
 }
 
-form .error-message {
+form .error-message,
+form > p.error {
     width: 100%;
     text-align: center;
     color: red;
     padding-bottom: 10px;
+}
+
+form ul.password-validation {
+    padding-left: 27px;
+}
+
+form ul.password-validation li {
+    color: red;
+    padding-bottom: 2px;
+}
+
+form ul.password-validation ul {
+    padding-left: 35px;
+    padding-bottom: 3px;
+    padding-top: 3px;
 }
 
 form section.input-fields {

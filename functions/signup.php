@@ -73,6 +73,7 @@
                 <input type="text" placeholder="Achternaam" name="lastname" required>
                 <input type="email" placeholder="E-mailadres" name="email" required>
                 <input type="password" placeholder="Wachtwoord" name="password" required>
+                <ul class="password-validation"></ul>
             </section>
             <section class="finish-signup">
                 <button class="button">
@@ -81,8 +82,13 @@
             </section>
         </form>
 
+        <script>
+            const SITE_LOCATION = '<?php echo SITE_LOCATION; ?>';
+        </script>
+
         <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.js"></script>
+        <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/signup.js"></script>
     </body>
 </html>
 

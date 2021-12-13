@@ -1,3 +1,12 @@
+<?php
+    $controller = new Library\Controller;
+    $user = $controller->__model('user');
+    if ($user->signedin()) {
+        Helper\Header::Location(SITE_LOCATION);
+        die();
+    }
+?>
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -10,7 +19,7 @@
         <link rel="stylesheet" href="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/forms.css">
     </head>
     <body>
-        <form class="unload" action="<?php echo SITE_LOCATION; ?>/pb-loader/module/scoreboard/signin" method="post">
+        <form class="unload portal" action="<?php echo SITE_LOCATION; ?>/pb-loader/module/scoreboard/signin" method="post">
             <div class="page-back">
                 <i data-feather="arrow-left"></i>
             </div>
@@ -24,13 +33,7 @@
                 </h1>
             </section>
 
-            <?php
-                if (isset($_GET['error']) || isset($_GET['message'])) {
-                    if (!isset($_GET['error'])) $_GET['error'] = 'error';
-                    if (!isset($_GET['message'])) $_GET['message'] = 'An error occured';
-                    echo '<p class="error-message">' . $_GET['message'] . ' (' . $_GET['error'] . ')</p>';
-                }
-            ?>
+            <p class="error"></p>
 
             <section class="input-fields">
                 <input type="email" placeholder="E-mailadres" name="identifier" required>
@@ -43,7 +46,17 @@
             </section>
         </form>
 
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+        <script>
+            const SITE_LOCATION = '<?php echo SITE_LOCATION; ?>';
+            const PB_API = axios.create({
+                baseURL: SITE_LOCATION + 'pb-api/'
+            });
+        </script>
+
         <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.js"></script>
+        <script src="<?php echo SITE_LOCATION; ?>/pb-pubfiles/js/pb-pages-auth-signin.js"></script>
     </body>
 </html>

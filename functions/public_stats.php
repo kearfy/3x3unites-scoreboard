@@ -10,23 +10,7 @@
         <link rel="stylesheet" href="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/pages.css">
     </head>
     <body>
-        <nav>
-            <section class="left">
-                <a href="/signup">
-                    Registreren
-                </a>
-            </section>
-            <section class="middle">
-                <div class="logo-container">
-                    <img src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/logo_white.svg" alt="3x3unites logo">
-                </div>
-            </section>
-            <section class="right">
-                <a href="/signin">
-                    Inloggen
-                </a>
-            </section>
-        </nav>
+        <?php require_once(DYNAMIC_DIR . '/modules/scoreboard/partials/navbar.php'); ?>
         
         <div class="notready">
             <p>
