@@ -59,12 +59,6 @@
             </section>
         </form>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', (event) => {
-                setTimeout(() => {
-                    document.querySelector("form.unload").classList.remove('unload');
-                }, 800);
-            });
-        </script>
+        <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.js"></script>
     </body>
 </html>
