@@ -1,6 +1,7 @@
 <?php
     namespace Module;
 
+    use Library\ModuleConfig;
     use Helper\ApiResponse as Respond;
     use Helper\Request;
     use Helper\Header;
@@ -9,6 +10,11 @@
 
     class Scoreboard {
         public function initialize() {
+            $config = new ModuleConfig('scoreboard');
+            $config->defaults(array(
+                "signup-disabled" => 0
+            ));
+
             Event::listen('request-processed', function($info) {
                 $url = explode('/', $info->url);
                 if ($info->url == '/') {

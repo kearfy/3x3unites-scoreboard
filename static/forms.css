@@ -38,6 +38,10 @@ form.unload {
     bottom: -15vh;
 }
 
+form > p {
+    text-align: center;
+}
+
 form .page-back {
     position: absolute;
     top: 0;
