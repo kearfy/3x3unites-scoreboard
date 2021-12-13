@@ -30,8 +30,10 @@
         
         <div class="notready">
             <p>
-                &#9814; We're sorry. This website is not ready yet but will be ready shortly. &#9814;
+                &#9814; Helaas is de website nog niet afgerond, maar binnenkort wel &#9814;
             </p>
         </div>
+        
+        <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.js"></script>
     </body>
 </html>
