@@ -22,6 +22,9 @@
             <section class="logo">
                 <img src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/logo_white.svg" alt="">
             </section>
+            <div class="page-back">
+                <i data-feather="arrow-left"></i>
+            </div>
             <section class="title">
                 <h1>
                     Inschrijven
@@ -29,10 +32,17 @@
             </section>
             <section class="input-fields">
                 <!-- The check boxes -->
-                <div class="checkbox">
-                    <input type="checkbox" id="tournament1" name="tournament1">
-                    <label for="tournament1"> Ik doe mee met tournament 1</label><br>
+                <div class="checkboxes">
+                    <div class="checkbox">
+                        <input type="checkbox" id="tournament1" name="tournament1">
+                        <label for="tournament1"> Ik doe mee met tournament 1</label><br>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="tournament2" name="tournament2">
+                        <label for="tournament2"> Ik doe mee met tournament 2</label><br>
+                    </div>
                 </div>
+
                     
             </section>
             <section class="finish-signup">

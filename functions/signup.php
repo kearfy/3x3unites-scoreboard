@@ -112,9 +112,6 @@
             <div class="page-back">
                 <i data-feather="arrow-left"></i>
             </div>
-            <div class="page-back">
-                <i data-feather="arrow-left"></i>
-            </div>
 
             <section class="logo">
                 <img src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/logo_white.svg" alt="">
