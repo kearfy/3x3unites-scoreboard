@@ -34,6 +34,10 @@
                     }
                 } else if ($url[0] == 'signin') {
                     Request::rewrite('/pb-loader/module/scoreboard/signin');
+                } else if ($url[0] == 'profile') {
+                    Request::rewrite('/pb-loader/module/scoreboard/profile');
+                } else if ($url[0] == 'enroll') {
+                    Request::rewrite('/pb-loader/module/scoreboard/enroll');
                 }
             });
         }
