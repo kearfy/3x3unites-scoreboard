@@ -36,10 +36,12 @@
                 <div class="checkboxes">
                     <div class="checkbox">
                         <input type="checkbox" id="tournament1" name="tournament1">
+                        <label for="tournament1" class="checkmark"></label>
                         <label for="tournament1"> Ik doe mee met tournament 1</label><br>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" id="tournament2" name="tournament2">
+                        <label for="tournament2" class="checkmark"></label>
                         <label for="tournament2"> Ik doe mee met tournament 2</label><br>
                     </div>
                 </div>
@@ -53,6 +55,7 @@
             </section>
         </form>
 
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.js"></script>
     </body>
 </html>

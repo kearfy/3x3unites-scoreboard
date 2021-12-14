@@ -128,7 +128,7 @@ form section.input-fields {
     padding-bottom: 20px;
 }
 
-form section.input-fields input:not([type=radio]) {
+form section.input-fields input:not([type=radio]):not([type=checkbox]) {
     width: calc(100% - 50px);
     padding: 15px 25px;
     background: #ddd;
@@ -161,6 +161,44 @@ form section.input-fields .checkbox {
 
 form section.input-fields .checkboxes {
     padding-bottom: 10px;
+}
+
+form section.input-fields .checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+form section.input-fields .checkbox input {
+    display: none;
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}
+
+form section.input-fields .checkbox .checkmark {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    display: block;
+    margin-right: 15px;
+    cursor: pointer;
+
+    border-radius: 6px;
+    transition: border-radius .2s ease;
+
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+form section.input-fields .checkbox .checkmark:hover {
+    border-radius: 3px;
+}
+
+form section.input-fields .checkbox input:checked + .checkmark {
+    background-color: lightgreen;
 }
 
 form section.finish-signup {
