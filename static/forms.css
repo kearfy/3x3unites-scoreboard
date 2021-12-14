@@ -185,20 +185,29 @@ form section.input-fields .checkbox .checkmark {
     margin-right: 15px;
     cursor: pointer;
 
-    border-radius: 6px;
-    transition: border-radius .2s ease;
+    border-radius: 7px;
+    transition: border-radius .2s ease, background-color .1s ease;
 
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+
+    position: relative;
 }
 
 form section.input-fields .checkbox .checkmark:hover {
-    border-radius: 3px;
+    background-color: #666;
+    border-radius: 10px;
 }
 
 form section.input-fields .checkbox input:checked + .checkmark {
     background-color: lightgreen;
+    border-radius: 3px;
+}
+
+form section.input-fields .checkbox input:checked + .checkmark::before {
+    position: absolute;
+
 }
 
 form section.finish-signup {
