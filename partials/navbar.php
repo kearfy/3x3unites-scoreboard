@@ -27,6 +27,7 @@
     </section>
     <section class="right">
         <?php showSignedout($signedin, '<a href="/signin">Inloggen</a>'); ?>
+        <?php showSignedin($signedin, '<a href="/profile">Profiel</a>'); ?>
     </section>
 </nav>
 
