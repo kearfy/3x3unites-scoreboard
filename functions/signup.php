@@ -5,6 +5,8 @@
     use Helper\Header;
     use Library\Users;
     use Library\ModuleConfig;
+    use Library\Token;
+    use Library\Sessions;
 
     $postdata = Request::parsePost();
     $dataset = array('firstname', 'lastname', 'email', 'password');
@@ -18,7 +20,19 @@
             $res = $users->create($postdata);
             if ($res->success) {
                 $users->metaSet($res->id, 'type', 'player');
-                Header::Location(SITE_LOCATION . '/signup/profile-prefill');
+                $tokens = new Token;
+                $sessions = new Sessions;
+                $session = $sessions->create($res->id);
+                $token = $tokens->create('refresh-token', array("session" => $session));
+
+                if ($token->success) {
+                    $secure = (isset($_SERVER['HTTPS']) && !empty($_SERVER['HTTPS']) ? true : false);
+                    $url = parse_url(SITE_LOCATION);
+                    setcookie('pb-refresh-token', $token->token, 2147483647, $url['path'], $url['host'], $secure, true);
+                    Header::Location(SITE_LOCATION . '/signup/profile-prefill');
+                } else {
+                    Header::Location(SITE_LOCATION . '/signin');
+                }
             } else {
                 Header::Location(SITE_LOCATION . '/signup?error=' . $res->error . '&message=' . $res->message);
             }

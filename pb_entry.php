@@ -2,6 +2,7 @@
     namespace Module;
 
     use Library\ModuleConfig;
+    use Library\Controller;
     use Helper\ApiResponse as Respond;
     use Helper\Request;
     use Helper\Header;
@@ -16,9 +17,22 @@
             ));
 
             Event::listen('request-processed', function($info) {
+                $controller = new Controller;
+                $userModel = $controller->__model('user');
+                $user = $userModel->info();
+    
+                $isPlayer = false;
+                $profileFilled = false;
+                $canRedirect = false;
+                foreach($user->meta as $metaitem) {
+                    if ($metaitem['name'] == 'type' && $metaitem['value'] == 'player') $isPlayer = true;
+                    if ($metaitem['name'] == 'profile-filled' && $metaitem['value'] == '1') $profileFilled = true;
+                }
+
                 $url = explode('/', $info->url);
                 if ($info->url == '/') {
                     Request::rewrite('/pb-loader/module/scoreboard/public_stats');
+                    $canRedirect = true;
                 } else if ($url[0] == 'configuration') {
                     array_shift($url);
                     Header::Location('/pb-dashboard/module-config/scoreboard/' . join('/', $url));
@@ -28,16 +42,25 @@
                             Request::rewrite('/pb-loader/module/scoreboard/profile_prefill');
                         } else {
                             Request::rewrite('/pb-loader/module/scoreboard/signup');
+                            $canRedirect = true;
                         }
                     } else {
                         Request::rewrite('/pb-loader/module/scoreboard/signup');
+                        $canRedirect = true;
                     }
                 } else if ($url[0] == 'signin') {
                     Request::rewrite('/pb-loader/module/scoreboard/signin');
+                    $canRedirect = true;
                 } else if ($url[0] == 'profile') {
                     Request::rewrite('/pb-loader/module/scoreboard/profile');
+                    $canRedirect = true;
                 } else if ($url[0] == 'enroll') {
                     Request::rewrite('/pb-loader/module/scoreboard/enroll');
+                    $canRedirect = true;
+                }
+
+                if ($canRedirect && $isPlayer && !$profileFilled) {
+                    Header::Location(SITE_LOCATION . '/signup/profile-prefill');
                 }
             });
         }
