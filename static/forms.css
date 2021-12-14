@@ -154,6 +154,15 @@ form section.input-fields .gender-selection {
     padding-bottom: 10px;
 }
 
+form section.input-fields .checkbox {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+form section.input-fields .checkbox {
+    padding-bottom: 10px;
+}
+
 form section.finish-signup {
     width: 100%;
     display: flex;

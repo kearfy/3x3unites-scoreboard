@@ -54,7 +54,7 @@
             const PB_API = axios.create({
                 baseURL: SITE_LOCATION + 'pb-api/'
             });
-        </script>
+        </script>  
 
         <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.js"></script>
         <script src="<?php echo SITE_LOCATION; ?>/pb-pubfiles/js/pb-pages-auth-signin.js"></script>

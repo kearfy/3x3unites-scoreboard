@@ -19,7 +19,7 @@
 <nav>
     <section class="left">
         <?php showSignedout($signedin, '<a href="/signup">Registreren</a>'); ?>
-        <?php showSignedin($signedin, '<a href="/inschrijven">Inschrijven</a>'); ?>
+        <?php showSignedin($signedin, '<a href="/enroll">Inschrijven</a>'); ?>
     </section>
     <section class="middle">
         <div class="logo-container">
