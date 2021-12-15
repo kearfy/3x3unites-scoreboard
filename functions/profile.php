@@ -106,6 +106,16 @@
                         ?>
                     </p>
                 </div>
+                <div class="full-width">
+                    <h3>Geplaatste opmerking</h3>
+                    <p>
+                        <?php 
+                            $notes = $users->metaGet($user->id, 'notes');
+                            if (!$notes) $notes = 'Geen opmerking geplaatst';
+                            echo $notes;
+                        ?>
+                    </p>
+                </div>
             </div>
         </form>
 

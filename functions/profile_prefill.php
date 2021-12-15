@@ -15,9 +15,10 @@
 
     $postdata = Request::parsePost();
     $dataset = array('gender', 'age', 'height', 'club', 'team', 'competition');
+    $allowed = array('gender', 'age', 'height', 'club', 'team', 'competition', 'notes');
 
     if (Request::method() == 'POST') {
-        $postdata = (object) Validate::removeUnlisted($dataset, $postdata);
+        $postdata = (object) Validate::removeUnlisted($allowed, $postdata);
         $missing = Validate::listMissing($dataset, $postdata);
         if (count($missing) == 0) {
             $users = new Users;
@@ -27,6 +28,7 @@
             $users->metaSet($user->id, 'club', $postdata->club);
             $users->metaSet($user->id, 'team', $postdata->team);
             $users->metaSet($user->id, 'competition', $postdata->competition);
+            if (isset($postdata->notes)) $users->metaSet($user->id, 'notes', $postdata->notes);
             $users->metaSet($user->id, 'profile-filled', '1');
             Header::Location(SITE_LOCATION);
         } else {
@@ -80,6 +82,7 @@
                 <input type="text" placeholder="Vereneging" name="club" required>
                 <input type="text" placeholder="Team (u18-1)" name="team" required>
                 <input type="text" placeholder="competitie" name="competition" required>
+                <textarea name="notes" id="notes" cols="30" rows="6" placeholder="Wil je nog een opmerking kwijt?"></textarea>
             </section>
             <section class="finish-signup">
                 <button class="button">
