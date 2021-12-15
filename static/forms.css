@@ -331,3 +331,16 @@ form.unload .profile-details {
     margin-top: 7px;
     color: #bbb;
 }
+
+@media (max-width: 700px) {
+    .profile-details > div {
+    	width: calc(100% - 50px);
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    .profile-details > div:hover {
+        transform: scale(1.0);
+        background-color: #3f3f3f;
+    }
+}
