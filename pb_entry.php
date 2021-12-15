@@ -24,7 +24,7 @@
                 $isPlayer = false;
                 $profileFilled = false;
                 $canRedirect = false;
-                foreach($user->meta as $metaitem) {
+                if ($user) foreach($user->meta as $metaitem) {
                     if ($metaitem['name'] == 'type' && $metaitem['value'] == 'player') $isPlayer = true;
                     if ($metaitem['name'] == 'profile-filled' && $metaitem['value'] == '1') $profileFilled = true;
                 }
@@ -35,7 +35,7 @@
                     $canRedirect = true;
                 } else if ($url[0] == 'configuration') {
                     array_shift($url);
-                    Header::Location('/pb-dashboard/module-config/scoreboard/' . join('/', $url));
+                    Header::Location(SITE_LOCATION . 'pb-dashboard/module-config/scoreboard/' . join('/', $url));
                 } else if ($url[0] == 'signup') {
                     if (isset($url[1])) {
                         if ($url[1] == 'profile-prefill') {
@@ -60,7 +60,7 @@
                 }
 
                 if ($canRedirect && $isPlayer && !$profileFilled) {
-                    Header::Location(SITE_LOCATION . '/signup/profile-prefill');
+                    Header::Location(SITE_LOCATION . 'signup/profile-prefill');
                 }
             });
         }

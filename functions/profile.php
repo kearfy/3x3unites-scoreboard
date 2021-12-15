@@ -1,0 +1,74 @@
+<?php
+    use Helper\Header;
+    use Library\Controller;
+    use Library\Users;
+
+    $controller = new Controller;
+    $userModel = $controller->__model('user');
+    $user = $userModel->info();
+    if (!$user) {
+        Header::Location(SITE_LOCATION . 'signin');
+        die();
+    }
+
+    $users = new Users;
+?>
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profiel - 3x3unites scoreboard</title>
+        
+        <link rel="stylesheet" href="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.css">
+        <link rel="stylesheet" href="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/forms.css">
+    </head>
+    <body>
+        <form class="unload" action="<?php echo SITE_LOCATION; ?>">
+            <section class="logo">
+                <img src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/logo_white.svg" alt="">
+            </section>
+            <section class="title">
+                <h1>
+                    Profiel bekijken
+                </h1>
+            </section>
+            <div class="profile-details">
+                <div>
+                    <h3>Naam</h3>
+                    <p>
+                        <?php echo $user->fullname; ?>
+                    </p>
+                </div>
+                <div>
+                    <h3>E-mail</h3>
+                    <p>
+                        <?php echo $user->email; ?>
+                    </p>
+                </div>
+                <div>
+                    <h3>Geslacht</h3>
+                    <p>
+                        <?php 
+                            switch($users->metaGet($user->id, 'gender')) {
+                                case 'male':
+                                    echo 'Man';
+                                    break;
+                                case 'female':
+                                    echo 'Vrouw';
+                                    break;
+                                default:
+                                    echo 'Anders';
+                                    break;
+                            }
+                        ?>
+                    </p>
+                </div>
+            </div>
+        </form>
+
+        <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.js"></script>
+    </body>
+</html>

@@ -29,15 +29,15 @@
                     $secure = (isset($_SERVER['HTTPS']) && !empty($_SERVER['HTTPS']) ? true : false);
                     $url = parse_url(SITE_LOCATION);
                     setcookie('pb-refresh-token', $token->token, 2147483647, $url['path'], $url['host'], $secure, true);
-                    Header::Location(SITE_LOCATION . '/signup/profile-prefill');
+                    Header::Location(SITE_LOCATION . 'signup/profile-prefill');
                 } else {
-                    Header::Location(SITE_LOCATION . '/signin');
+                    Header::Location(SITE_LOCATION . 'signin');
                 }
             } else {
-                Header::Location(SITE_LOCATION . '/signup?error=' . $res->error . '&message=' . $res->message);
+                Header::Location(SITE_LOCATION . 'signup?error=' . $res->error . '&message=' . $res->message);
             }
         } else {
-            Header::Location(SITE_LOCATION . '/signup?error=missing_information&missing=' . join('-', $missing));
+            Header::Location(SITE_LOCATION . 'signup?error=missing_information&missing=' . join('-', $missing));
         }
 
         die();
