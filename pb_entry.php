@@ -13,7 +13,8 @@
         public function initialize() {
             $config = new ModuleConfig('scoreboard');
             $config->defaults(array(
-                "signup-disabled" => 0
+                "signup-disabled" => 0,
+                "enrollment-disabled" => 0
             ));
 
             Event::listen('request-processed', function($info) {

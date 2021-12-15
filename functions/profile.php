@@ -27,6 +27,10 @@
     </head>
     <body>
         <form class="unload" action="<?php echo SITE_LOCATION; ?>">
+            <div class="page-back">
+                <i data-feather="arrow-left"></i>
+            </div>
+
             <section class="logo">
                 <img src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/logo_white.svg" alt="">
             </section>
@@ -59,16 +63,30 @@
                                 case 'female':
                                     echo 'Vrouw';
                                     break;
-                                default:
+                                case 'other':
                                     echo 'Anders';
                                     break;
+                                default:
+                                    echo 'Onbekend';
+                                    break;
                             }
+                        ?>
+                    </p>
+                </div>
+                <div>
+                    <h3>Team</h3>
+                    <p>
+                        <?php 
+                            $team = $users->metaGet($user->id, 'team');
+                            if (!$team) $team = 'Onbekend';
+                            echo $team;
                         ?>
                     </p>
                 </div>
             </div>
         </form>
 
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.js"></script>
     </body>
 </html>
