@@ -84,4 +84,5 @@ nav > section a:not(:last-child) {
 }
 .notready p {
     font-size: 18px;
+	text-align: center;
 }

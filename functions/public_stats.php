@@ -14,7 +14,8 @@
         
         <div class="notready">
             <p>
-                &#9814; Helaas is de website nog niet afgerond, maar binnenkort wel &#9814;
+                &#9814; Helaas is de website nog niet afgerond, maar binnenkort wel &#9814;<br><br>
+                Spelers kunnen zich alvast <a href="/signup">Registreren</a>.
             </p>
         </div>
         
