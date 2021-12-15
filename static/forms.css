@@ -258,3 +258,52 @@ form section.finish-signup .button:active {
         font-size: 24px;
     }
 }
+
+.profile-details {
+	display: flex;
+	flex-wrap: wrap;
+    transform: scaleY(1.0);
+    transition: transform 0.8s ease, margin-top 1s ease, opacity 1.2s ease;
+    margin-top: 0px;
+    opacity: 1;
+}
+
+form.unload .profile-details {
+    margin-top: 25%;
+    transform: scaleY(0.8) scaleX(0.7);
+    opacity: 0;
+}
+
+.profile-details > div {
+	width: calc(50% - 65px);
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #3f3f3f;
+    margin-top: 30px;
+    transform: scale(1.0);
+    transition: transform .2s ease, background-color .1s ease;
+}
+
+.profile-details > div:hover {
+    transform: scale(1.1);
+    background-color: #444;
+    transition: transform .2s ease, background-color .5s ease;
+}
+
+.profile-details > div:nth-child(odd) {
+    margin-right: 15px;
+}
+
+.profile-details > div:nth-child(even) {
+    margin-left: 15px;
+}
+
+.profile-details > div h3 {
+    font-size: 20px;
+}
+
+.profile-details > div p {
+    font-size: 15px;
+    margin-top: 7px;
+    color: #bbb;
+}

@@ -77,12 +77,32 @@
                     </p>
                 </div>
                 <div>
+                    <h3>Club</h3>
+                    <p>
+                        <?php 
+                            $club = $users->metaGet($user->id, 'club');
+                            if (!$club) $club = 'Onbekend';
+                            echo $club;
+                        ?>
+                    </p>
+                </div>
+                <div>
                     <h3>Team</h3>
                     <p>
                         <?php 
                             $team = $users->metaGet($user->id, 'team');
                             if (!$team) $team = 'Onbekend';
                             echo $team;
+                        ?>
+                    </p>
+                </div>
+                <div>
+                    <h3>Competitie</h3>
+                    <p>
+                        <?php 
+                            $competition = $users->metaGet($user->id, 'competition');
+                            if (!$competition) $competition = 'Onbekend';
+                            echo $competition;
                         ?>
                     </p>
                 </div>
