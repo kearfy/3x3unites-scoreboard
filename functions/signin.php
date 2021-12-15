@@ -2,7 +2,7 @@
     $controller = new Library\Controller;
     $user = $controller->__model('user');
     if ($user->signedin()) {
-        Helper\Header::Location(SITE_LOCATION);
+        Helper\Header::Location(SITE_LOCATION . 'profile');
         die();
     }
 ?>

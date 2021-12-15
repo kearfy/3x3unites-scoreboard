@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.querySelectorAll('.page-back').forEach(el => el.addEventListener('click', e => {
-    if (new URL(document.referrer) == location.origin) {
+    if (document.referrer !== '' && new URL(document.referrer) == location.origin) {
         history.back();
     } else {
         location.href = location.origin;

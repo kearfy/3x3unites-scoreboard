@@ -13,6 +13,13 @@
         die();
     }
 
+    foreach($user->meta as $metaitem) {
+        if ($metaitem['name'] == 'profile-filled' && $metaitem['value'] == '1') {
+            Header::Location(SITE_LOCATION . 'profile');
+            die();
+        }
+    }
+
     $postdata = Request::parsePost();
     $dataset = array('gender', 'age', 'height', 'club', 'team', 'competition');
     $allowed = array('gender', 'age', 'height', 'club', 'team', 'competition', 'notes');
@@ -34,6 +41,8 @@
         } else {
             Header::Location(SITE_LOCATION . 'signup/profile-prefill?error=missing_information&missing=' . join('-', $missing));
         }
+
+        die();
     }
 ?>
 
