@@ -34,6 +34,9 @@
             <section class="logo">
                 <img src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/logo_white.svg" alt="">
             </section>
+            <div class="page-back">
+                <i data-feather="arrow-left"></i>
+            </div>
             <section class="title">
                 <h1>
                     Profiel bekijken
