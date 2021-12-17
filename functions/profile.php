@@ -171,7 +171,7 @@
                 </div>
 
                 <section class="buttons">
-                    <?php if ($self) { ?><a href="<?php echo SITE_LOCATION; ?>enroll">Inschrijving aanpassen</a><? } ?>
+                    <?php if ($self) { ?><a href="<?php echo SITE_LOCATION; ?>enroll">Inschrijving aanpassen</a><?php } ?>
                 </section>
             </div>
         </form>
