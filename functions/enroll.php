@@ -35,6 +35,15 @@
                 <h1>
                     Inschrijven
                 </h1>
+                <p>
+                    2 JAN 2022<br>11:00 - 16:00
+                </p>
+                <p>
+                    Sportcomplex Koning Willem-Alexander<br><b>Hoofddorp</b>
+                </p>
+                <p>
+                    //11:00 - 13:00//<br>Inschrijving als individu, mixed teams 12+
+                </p>
             </section>
             <section class="input-fields">
                 <!-- The check boxes -->
@@ -44,6 +53,12 @@
                         <label for="tournament1" class="checkmark"></label>
                         <label for="tournament1"> Ik doe mee met tournament 1</label><br>
                     </div>
+                    <p>
+                    //13:00 - 13:30//<br> Shooting game
+                    </p>
+                    <p>
+                    //13:30 - 16:00//<br> Inschrijving als team 16+ <br> (individuele inschrijving ook mogelijk)
+                    </p>
                     <div class="checkbox">
                         <input type="checkbox" id="tournament2" name="tournament2">
                         <label for="tournament2" class="checkmark"></label>

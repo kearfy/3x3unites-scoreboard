@@ -217,7 +217,7 @@ form section.input-fields .checkbox .checkmark:hover {
 }
 
 form section.input-fields .checkbox input:checked + .checkmark {
-    background-color: lightgreen;
+    background-color: gray;
     border-radius: 3px;
 }
 
