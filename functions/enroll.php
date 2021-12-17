@@ -31,46 +31,73 @@
             <section class="logo">
                 <img src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/logo_white.svg" alt="">
             </section>
-            <section class="title">
-                <h1>
-                    Inschrijven
-                </h1>
-                <p>
-                    2 JAN 2022<br>11:00 - 16:00
-                </p>
-                <p>
-                    Sportcomplex Koning Willem-Alexander<br><b>Hoofddorp</b>
-                </p>
-                <p>
-                    //11:00 - 13:00//<br>Inschrijving als individu, mixed teams 12+
-                </p>
-            </section>
-            <section class="input-fields">
-                <!-- The check boxes -->
-                <div class="checkboxes">
-                    <div class="checkbox">
-                        <input type="checkbox" id="tournament1" name="tournament1">
-                        <label for="tournament1" class="checkmark"></label>
-                        <label for="tournament1"> Ik doe mee met tournament 1</label><br>
-                    </div>
-                    <p>
-                    //13:00 - 13:30//<br> Shooting game
-                    </p>
-                    <p>
-                    //13:30 - 16:00//<br> Inschrijving als team 16+ <br> (individuele inschrijving ook mogelijk)
-                    </p>
-                    <div class="checkbox">
-                        <input type="checkbox" id="tournament2" name="tournament2">
-                        <label for="tournament2" class="checkmark"></label>
-                        <label for="tournament2"> Ik doe mee met tournament 2</label><br>
+            <section class="tournament-details input-fields">
+                <div>
+                    <h3>
+                        2 JAN 2022
+                    </h3>
+                    <div class="times">
+                        <p>11:00</p> 
+                        <span class="line"></span> 
+                        <p>16:00</p>
                     </div>
                 </div>
-
-                    
+                <div>
+                    <h3>
+                        Sportcomplex Koning Willem-Alexander
+                    </h3>
+                    <p>
+                        Hoofddorp
+                    </p>
+                </div>
+                <div class="two-blocks">
+                    <div>
+                        <h3>
+                            Tournament #1
+                        </h3>
+                        <div class="times">
+                            <p>11:00</p> 
+                            <span class="line"></span> 
+                            <p>13:00</p>
+                        </div>
+                        <p>
+                            Inschrijving als individu, mixed teams 12+
+                        </p>
+                        <div class="checkbox">
+                            <input type="checkbox" id="tournament1" name="tournament1">
+                            <label for="tournament1" class="checkmark"></label>
+                            <label for="tournament1"> Ik doe mee</label><br>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>
+                            Tournament #2
+                        </h3>
+                        <div class="times">
+                            <p>13:30</p> 
+                            <span class="line"></span> 
+                            <p>16:00</p>
+                        </div>
+                        <p>
+                            Inschrijving als team 16+ <br>
+                            Individuele inschrijving ook mogelijk
+                        </p>
+                        <div class="checkbox">
+                            <input type="checkbox" id="tournament2" name="tournament2">
+                            <label for="tournament2" class="checkmark"></label>
+                            <label for="tournament2"> Ik doe mee</label><br>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="note">
+                <p>
+                    Team registratie wordt binnenkort geopent.
+                </p>
             </section>
             <section class="finish-signup">
                 <button class="button">
-                    Inschrijven
+                    Opslaan
                 </button>
             </section>
         </form>
