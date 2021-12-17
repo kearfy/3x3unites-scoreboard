@@ -99,6 +99,16 @@ form section.title h1 {
     font-size: 30px;
 }
 
+form section.note {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form section.note p {
+    color: #bbb;
+}
+
 form .error-message,
 form > p.error {
     width: 100%;
