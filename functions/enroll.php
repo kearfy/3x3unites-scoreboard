@@ -1,12 +1,34 @@
 <?php
     use Helper\Request;
+    use Helper\Validate;
+    use Helper\Header;
     use Library\ModuleConfig;
+    use Library\Controller;
+    use Library\Users;
+
+    $controller = new Controller;
+    $userModel = $controller->__model('user');
+    $user = $userModel->info();
+    if (!$user) {
+        Header::Location(SITE_LOCATION . 'signup');
+        die();
+    }
     
     $postdata = Request::parsePost();
-    $dataset = array('firstname', 'lastname', 'email', 'password');
+    $dataset = array('tournament1', 'tournament2');
     $config = new ModuleConfig('scoreboard');
 
     if ($config->get('enrollment-disabled') == '0') {
+        if (Request::method() == 'POST') {
+            $postdata = (object) Validate::removeUnlisted($dataset, $postdata);
+            $users = new Users;
+
+            if (isset($postdata->tournament1)) $users->metaSet($user->id, 'tournament1', ($postdata->tournament1 == 'on' ? 1 : 0));
+            if (isset($postdata->tournament2)) $users->metaSet($user->id, 'tournament2', ($postdata->tournament2 == 'on' ? 1 : 0));
+    
+            Header::Location(SITE_LOCATION);
+            die();
+        }
 
                 // ======== ENROLLMENT IS ENABLED ======== \\
 ?>
@@ -23,7 +45,7 @@
         <link rel="stylesheet" href="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/forms.css">
     </head>
     <body>
-        <form class="unload" action="<?php echo SITE_LOCATION; ?>/pb-loader/module/scoreboard/signup" method="post">
+        <form class="unload" action="<?php echo SITE_LOCATION; ?>/enroll" method="post">
             <div class="page-back">
                 <i data-feather="arrow-left"></i>
             </div>
@@ -64,6 +86,7 @@
                             Inschrijving als individu, mixed teams 12+
                         </p>
                         <div class="checkbox">
+                            <input type="hidden" name="tournament1" value="off">
                             <input type="checkbox" id="tournament1" name="tournament1">
                             <label for="tournament1" class="checkmark"></label>
                             <label for="tournament1"> Ik doe mee</label><br>
@@ -83,6 +106,7 @@
                             Individuele inschrijving ook mogelijk
                         </p>
                         <div class="checkbox">
+                            <input type="hidden" name="tournament2" value="off">
                             <input type="checkbox" id="tournament2" name="tournament2">
                             <label for="tournament2" class="checkmark"></label>
                             <label for="tournament2"> Ik doe mee</label><br>

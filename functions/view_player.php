@@ -125,6 +125,30 @@
                             ?>
                         </p>
                     </div>
+                    <div>
+                        <h3>Tournament 1</h3>
+                        <p>
+                            <?php 
+                                $tournament1 = $users->metaGet($user->id, 'tournament1');
+                                if ($tournament1 == '0') $tournament1 = 'Niet ingeschreven';
+                                if ($tournament1 == '1') $tournament1 = 'Ingeschreven';
+                                if (!$tournament1) $tournament1 = 'Onbekend';
+                                echo $tournament1;
+                            ?>
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Tournament 2</h3>
+                        <p>
+                            <?php 
+                                $tournament2 = $users->metaGet($user->id, 'tournament2');
+                                if ($tournament2 == '0') $tournament2 = 'Niet ingeschreven';
+                                if ($tournament2 == '1') $tournament2 = 'Ingeschreven';
+                                if (!$tournament2) $tournament2 = 'Onbekend';
+                                echo $tournament2;
+                            ?>
+                        </p>
+                    </div>
                 </div>
             <?php
                 }
