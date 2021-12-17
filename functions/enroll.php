@@ -17,11 +17,11 @@
     $postdata = Request::parsePost();
     $dataset = array('tournament1', 'tournament2');
     $config = new ModuleConfig('scoreboard');
+    $users = new Users;
 
     if ($config->get('enrollment-disabled') == '0') {
         if (Request::method() == 'POST') {
             $postdata = (object) Validate::removeUnlisted($dataset, $postdata);
-            $users = new Users;
 
             if (isset($postdata->tournament1)) $users->metaSet($user->id, 'tournament1', ($postdata->tournament1 == 'on' ? 1 : 0));
             if (isset($postdata->tournament2)) $users->metaSet($user->id, 'tournament2', ($postdata->tournament2 == 'on' ? 1 : 0));
@@ -29,6 +29,9 @@
             Header::Location(SITE_LOCATION);
             die();
         }
+
+        $tournament1 = ($users->metaGet($user->id, 'tournament1') == '1' ? 'checked' : '');
+        $tournament2 = ($users->metaGet($user->id, 'tournament2') == '1' ? 'checked' : '');
 
                 // ======== ENROLLMENT IS ENABLED ======== \\
 ?>
@@ -87,7 +90,7 @@
                         </p>
                         <div class="checkbox">
                             <input type="hidden" name="tournament1" value="off">
-                            <input type="checkbox" id="tournament1" name="tournament1">
+                            <input type="checkbox" id="tournament1" name="tournament1" <?php echo $tournament1; ?>>
                             <label for="tournament1" class="checkmark"></label>
                             <label for="tournament1"> Ik doe mee</label><br>
                         </div>
@@ -107,7 +110,7 @@
                         </p>
                         <div class="checkbox">
                             <input type="hidden" name="tournament2" value="off">
-                            <input type="checkbox" id="tournament2" name="tournament2">
+                            <input type="checkbox" id="tournament2" name="tournament2" <?php echo $tournament2; ?>>
                             <label for="tournament2" class="checkmark"></label>
                             <label for="tournament2"> Ik doe mee</label><br>
                         </div>

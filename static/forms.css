@@ -183,6 +183,11 @@ form section.input-fields .gender-selection {
 form section.input-fields .checkbox {
     margin-left: 10px;
     margin-bottom: 10px;
+    cursor: pointer;
+}
+
+form section.input-fields .checkbox * {
+    cursor: pointer;
 }
 
 form section.input-fields .checkboxes {
@@ -222,28 +227,40 @@ form section.input-fields .checkbox .checkmark {
     cursor: pointer;
 
     border-radius: 7px;
-    transition: border-radius .2s ease, background-color .1s ease;
+    transition: border-radius .1s ease, background-color .1s ease, transform .1s ease;
 
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 
     position: relative;
+
+    transform: scale(1.0);
 }
 
 form section.input-fields .checkbox .checkmark:hover {
-    background-color: #666;
+    background-color: #888;
     border-radius: 10px;
+    transform: scale(1.2);
+    transition: border-radius .1s ease, background-color .1s ease, transform .2s ease;
 }
 
 form section.input-fields .checkbox input:checked + .checkmark {
-    background-color: gray;
+    background-color: #555;
     border-radius: 3px;
+    position: relative;
 }
 
-form section.input-fields .checkbox input:checked + .checkmark::before {
+form section.input-fields .checkbox input:checked + .checkmark::after {
     position: absolute;
-
+    width: 20px;
+    height: 20px;
+    content: ' ';
+    display: block;
+    top: 0;
+    left: 0;
+    background-image: url('checkmark-white.png');
+    background-size: contain;
 }
 
 form section.finish-signup {
