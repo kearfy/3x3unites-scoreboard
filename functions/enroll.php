@@ -119,7 +119,7 @@
             </section>
             <section class="note">
                 <p>
-                    Team registratie wordt binnenkort geopent.
+                    Teamregistratie wordt binnenkort geopend.
                 </p>
             </section>
             <section class="finish-signup">
