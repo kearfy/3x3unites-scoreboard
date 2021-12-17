@@ -98,7 +98,7 @@
                 $type = $users->metaGet($current['id'], 'type');
                 if ($type && $type == 'player') {
                     $item = (object) $current;
-                    $tableContent .= '<tr id="' . $item->id. '"><td>' . $item->id . '</td><td>' . $item->firstname . ' ' . $item->lastname . '</td><td>' . $item->email . '</td><td>' . $item->created . '</td><td>' . $item->updated . '</td><td><a href="' . SITE_LOCATION . 'player/' . $item->id . '">Speler bekijken</a></tr>';
+                    $tableContent .= '<tr id="' . $item->id. '"><td>' . $item->id . '</td><td>' . $item->firstname . ' ' . $item->lastname . '</td><td>' . $item->email . '</td><td>' . $item->created . '</td><td>' . $item->updated . '</td><td><a href="' . SITE_LOCATION . 'profile/' . $item->id . '">Speler bekijken</a></tr>';
                 }
             }
 

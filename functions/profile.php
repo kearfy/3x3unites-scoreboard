@@ -6,12 +6,19 @@
     $controller = new Controller;
     $userModel = $controller->__model('user');
     $user = $userModel->info();
+    $users = new Users;
+
     if (!$user) {
         Header::Location(SITE_LOCATION . 'signin');
         die();
+    } else {
+        if (isset($params[0])) {
+            if ($userModel->check('user.view.other')) {
+                $users = new Users;
+                $user = $users->info($params[0]);
+            }
+        }
     }
-
-    $users = new Users;
 ?>
 
 <!DOCTYPE html>
