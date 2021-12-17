@@ -56,6 +56,26 @@
                     </p>
                 </div>
                 <div>
+                    <h3>Leeftijd</h3>
+                    <p>
+                        <?php 
+                            $age = $users->metaGet($user->id, 'age');
+                            if (!$age) $age = 'Onbekend';
+                            echo $age;
+                        ?>
+                    </p>
+                </div>
+                <div>
+                    <h3>Lengte</h3>
+                    <p>
+                        <?php 
+                            $length = $users->metaGet($user->id, 'length');
+                            if (!$length) $length = 'Onbekend';
+                            echo $length;
+                        ?>
+                    </p>
+                </div>
+                <div>
                     <h3>Geslacht</h3>
                     <p>
                         <?php 

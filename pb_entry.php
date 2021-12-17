@@ -50,13 +50,20 @@
                         $canRedirect = true;
                     }
                 } else if ($url[0] == 'signin') {
-                    Request::rewrite('/pb-loader/module/scoreboard/signin');
+                    array_shift($url);
+                    Request::rewrite('/pb-loader/module/scoreboard/signin/' . join('/', $url));
                     $canRedirect = true;
                 } else if ($url[0] == 'profile') {
-                    Request::rewrite('/pb-loader/module/scoreboard/profile');
+                    array_shift($url);
+                    Request::rewrite('/pb-loader/module/scoreboard/profile/' . join('/', $url));
                     $canRedirect = true;
                 } else if ($url[0] == 'enroll') {
-                    Request::rewrite('/pb-loader/module/scoreboard/enroll');
+                    array_shift($url);
+                    Request::rewrite('/pb-loader/module/scoreboard/enroll/' . join('/', $url));
+                    $canRedirect = true;
+                } else if ($url[0] == 'player') {
+                    array_shift($url);
+                    Request::rewrite('/pb-loader/module/scoreboard/view_player/' . join('/', $url));
                     $canRedirect = true;
                 }
 
