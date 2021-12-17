@@ -91,6 +91,13 @@
         }
 
         public function configurator($params) {
+            $controller = new Controller;
+            $userModel = $controller->__model('user');
+            if (!$userModel->check('site.tournament-admin')) {
+                Header::Location(SITE_LOCATION);
+                return;
+            }
+
             $users = new Users;
             $players = array();
             $tableContent = '';
