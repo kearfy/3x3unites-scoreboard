@@ -6,13 +6,15 @@
     if (isset($params[0])) {
         $users = new Users;
         $user = $users->info($params[0]);
+        if (!$user) {
+            $title = "Onbekende speler";
+        }
     } else {
         $controller = new Controller;
         $userModel = $controller->__model('user');
         $user = $userModel->info();
         if (!$user) {
-            Header::Location(SITE_LOCATION);
-            die();
+            $title = "Onbekende speler";
         } else {
             Header::Location(SITE_LOCATION . 'player/' . $user->id);
             die();
@@ -45,82 +47,88 @@
             </div>
             <section class="title">
                 <h1>
-                    <?php echo $user->fullname; ?>
+                    <?php echo ($user ? $user->fullname : ($title ? $title : "Er is een fout opgetreden")); ?>
                 </h1>
             </section>
-            <div class="profile-details">
-                <div>
-                    <h3>Leeftijd</h3>
-                    <p>
-                        <?php 
-                            $age = $users->metaGet($user->id, 'age');
-                            if (!$age) $age = 'Onbekend';
-                            echo $age;
-                        ?>
-                    </p>
+            <?php
+                if ($user) {
+            ?>
+                <div class="profile-details">
+                    <div>
+                        <h3>Leeftijd</h3>
+                        <p>
+                            <?php 
+                                $age = $users->metaGet($user->id, 'age');
+                                if (!$age) $age = 'Onbekend';
+                                echo $age;
+                            ?>
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Lengte</h3>
+                        <p>
+                            <?php 
+                                $height = $users->metaGet($user->id, 'height');
+                                if (!$height) $height = 'Onbekend';
+                                echo $height;
+                            ?>
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Geslacht</h3>
+                        <p>
+                            <?php 
+                                switch($users->metaGet($user->id, 'gender')) {
+                                    case 'male':
+                                        echo 'Man';
+                                        break;
+                                    case 'female':
+                                        echo 'Vrouw';
+                                        break;
+                                    case 'other':
+                                        echo 'Anders';
+                                        break;
+                                    default:
+                                        echo 'Onbekend';
+                                        break;
+                                }
+                            ?>
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Club</h3>
+                        <p>
+                            <?php 
+                                $club = $users->metaGet($user->id, 'club');
+                                if (!$club) $club = 'Onbekend';
+                                echo $club;
+                            ?>
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Team</h3>
+                        <p>
+                            <?php 
+                                $team = $users->metaGet($user->id, 'team');
+                                if (!$team) $team = 'Onbekend';
+                                echo $team;
+                            ?>
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Competitie</h3>
+                        <p>
+                            <?php 
+                                $competition = $users->metaGet($user->id, 'competition');
+                                if (!$competition) $competition = 'Onbekend';
+                                echo $competition;
+                            ?>
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <h3>Lengte</h3>
-                    <p>
-                        <?php 
-                            $height = $users->metaGet($user->id, 'height');
-                            if (!$height) $height = 'Onbekend';
-                            echo $height;
-                        ?>
-                    </p>
-                </div>
-                <div>
-                    <h3>Geslacht</h3>
-                    <p>
-                        <?php 
-                            switch($users->metaGet($user->id, 'gender')) {
-                                case 'male':
-                                    echo 'Man';
-                                    break;
-                                case 'female':
-                                    echo 'Vrouw';
-                                    break;
-                                case 'other':
-                                    echo 'Anders';
-                                    break;
-                                default:
-                                    echo 'Onbekend';
-                                    break;
-                            }
-                        ?>
-                    </p>
-                </div>
-                <div>
-                    <h3>Club</h3>
-                    <p>
-                        <?php 
-                            $club = $users->metaGet($user->id, 'club');
-                            if (!$club) $club = 'Onbekend';
-                            echo $club;
-                        ?>
-                    </p>
-                </div>
-                <div>
-                    <h3>Team</h3>
-                    <p>
-                        <?php 
-                            $team = $users->metaGet($user->id, 'team');
-                            if (!$team) $team = 'Onbekend';
-                            echo $team;
-                        ?>
-                    </p>
-                </div>
-                <div>
-                    <h3>Competitie</h3>
-                    <p>
-                        <?php 
-                            $competition = $users->metaGet($user->id, 'competition');
-                            if (!$competition) $competition = 'Onbekend';
-                            echo $competition;
-                        ?>
-                    </p>
-                </div>
-            </div>
+            <?php
+                }
+            ?>
         </form>
 
         <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
