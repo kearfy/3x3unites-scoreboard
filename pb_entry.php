@@ -3,6 +3,7 @@
 
     use Library\ModuleConfig;
     use Library\Controller;
+    use Library\Users;
     use Helper\ApiResponse as Respond;
     use Helper\Request;
     use Helper\Header;
@@ -90,6 +91,56 @@
         }
 
         public function configurator($params) {
-            echo 'configuration';
+            $users = new Users;
+            $players = array();
+            $tableContent = '';
+            foreach($users->list() as $current) {
+                $type = $users->metaGet($current['id'], 'type');
+                if ($type && $type == 'player') {
+                    $item = (object) $current;
+                    $tableContent .= '<tr id="' . $item->id. '"><td>' . $item->id . '</td><td>' . $item->firstname . ' ' . $item->lastname . '</td><td>' . $item->email . '</td><td>' . $item->created . '</td><td>' . $item->updated . '</td><td><a href="' . SITE_LOCATION . 'player/' . $item->id . '">Speler bekijken</a></tr>';
+                }
+            }
+
+            ?>
+                <section class="page-introduction">
+                    <h1>
+                        Tournament administratie
+                    </h1>
+                    <p>
+                        Beheer spelers en het tournament.
+                    </p>
+                </section>
+
+                <section class="no-padding">
+                    <table>
+                        <thead>
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                E-mail
+                            </th>
+                            <th>
+                                Created
+                            </th>
+                            <th>
+                                Updated
+                            </th>
+                            <th>
+                                Acties
+                            </th>
+                        </thead>
+                        <tbody>
+                            <?php
+                                echo $tableContent;
+                            ?>
+                        </tbody>
+                    </table>
+                </section>
+            <?php
         }
     }
