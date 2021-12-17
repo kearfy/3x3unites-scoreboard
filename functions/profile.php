@@ -131,7 +131,7 @@
                     <p>
                         <?php 
                             $notes = $users->metaGet($user->id, 'notes');
-                            if (!$notes) $notes = 'Geen opmerking geplaatst';
+                            if (!$notes || empty($notes)) $notes = 'Geen opmerking geplaatst';
                             echo $notes;
                         ?>
                     </p>
