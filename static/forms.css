@@ -460,6 +460,7 @@ form.unload .profile-details {
 .tournament-details + .note {
     padding-top: 10px;
     padding-bottom: 30px;
+    text-align: center;
 }
 
 @media (max-width: 700px) {
