@@ -423,6 +423,11 @@ form.unload .profile-details {
     padding-bottom: 5px;
 }
 
+.tournament-details > div h1 {
+    font-size: 30px;
+    padding-bottom: 15px;
+}
+
 .tournament-details > div p {
     color: #bbb;
 }

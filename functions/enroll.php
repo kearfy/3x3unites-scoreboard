@@ -58,9 +58,9 @@
             </section>
             <section class="tournament-details input-fields">
                 <div>
-                    <h3>
+                    <h1>
                         2 JAN 2022
-                    </h3>
+                    </h1>
                     <div class="times">
                         <p>11:00</p> 
                         <span class="line"></span> 
