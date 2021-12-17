@@ -69,9 +69,9 @@
                     <h3>Lengte</h3>
                     <p>
                         <?php 
-                            $length = $users->metaGet($user->id, 'length');
-                            if (!$length) $length = 'Onbekend';
-                            echo $length;
+                            $height = $users->metaGet($user->id, 'height');
+                            if (!$height) $height = 'Onbekend';
+                            echo $height;
                         ?>
                     </p>
                 </div>
