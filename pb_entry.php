@@ -119,7 +119,7 @@
                     </p>
                 </section>
 
-                <section class="no-padding">
+                <section class="transparent no-padding">
                     <table>
                         <thead>
                             <th>
