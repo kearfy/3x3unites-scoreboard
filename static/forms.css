@@ -445,6 +445,9 @@ form.unload .profile-details {
     text-align: center;
     padding-bottom: 60px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tournament-details > div:last-child {
@@ -464,6 +467,7 @@ form.unload .profile-details {
 .tournament-details > div.two-blocks {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     align-items: flex-start;
 }
 

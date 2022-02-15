@@ -121,10 +121,10 @@
                         Team registratie
                     </h3>
                     <div class="checkbox">
-                        <input type="hidden" name="tournament2" value="off">
-                        <input type="checkbox" id="tournament2" name="tournament2" <?php echo $tournament2; ?>>
-                        <label for="tournament2" class="checkmark"></label>
-                        <label for="tournament2"> Ik wil een team registreren</label><br>
+                        <input type="hidden" name="team-registration" value="off">
+                        <input type="checkbox" id="team-registration" name="team-registration" <?php echo $tournament2; ?>>
+                        <label for="team-registration" class="checkmark"></label>
+                        <label for="team-registration"> Ik wil een team registreren</label><br>
                     </div>
                 </div>
             </section>
