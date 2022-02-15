@@ -13,6 +13,7 @@
         <?php require_once(DYNAMIC_DIR . '/modules/scoreboard/partials/navbar.php'); ?>
         
         <div class="notready">
+            <?php echo file_get_contents(DYNAMIC_DIR . '/modules/scoreboard/static/basketball.svg'); ?>
             <p>
                 &#9814; Helaas is de website nog niet afgerond, maar binnenkort wel &#9814;<br><br>
                 Spelers kunnen zich alvast <a href="/signup">Registreren</a>.
