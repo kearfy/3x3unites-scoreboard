@@ -1,7 +1,13 @@
 <?php
+    $users = new Library\Users;
     $controller = new Library\Controller;
-    $user = $controller->__model('user');
-    $signedin = $user->signedin();
+    $userModel = $controller->__model('user');
+    $signedin = $userModel->signedin();
+    
+    if ($signedin) {
+        $user = $userModel->info();
+        $enrolled = $users->metaGet($user->id, 'tournament1') || $users->metaGet($user->id, 'tournament2');
+    }
 
     function showSignedin($signedin, $content) {
         if ($signedin) {
@@ -14,12 +20,13 @@
             echo $content;
         }
     }
+
 ?>
 
 <nav>
     <section class="left">
         <?php showSignedout($signedin, '<a href="/signup">Registreren</a>'); ?>
-        <?php showSignedin($signedin, '<a href="/enroll">Inschrijven</a>'); ?>
+        <?php showSignedin($signedin, '<a href="/enroll">' . ($enrolled ? "Inschrijving" : "Inschrijven") . '</a>'); ?>
     </section>
     <section class="middle">
         <div class="logo-container">

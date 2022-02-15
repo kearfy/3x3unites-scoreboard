@@ -59,7 +59,7 @@
             <section class="tournament-details input-fields">
                 <div>
                     <h1>
-                        2 JAN 2022
+                        10 APR 2022
                     </h1>
                     <div class="times">
                         <p>11:00</p> 
@@ -114,6 +114,17 @@
                             <label for="tournament2" class="checkmark"></label>
                             <label for="tournament2"> Ik doe mee</label><br>
                         </div>
+                    </div>
+                </div>
+                <div class="team-registration">
+                    <h3>
+                        Team registratie
+                    </h3>
+                    <div class="checkbox">
+                        <input type="hidden" name="tournament2" value="off">
+                        <input type="checkbox" id="tournament2" name="tournament2" <?php echo $tournament2; ?>>
+                        <label for="tournament2" class="checkmark"></label>
+                        <label for="tournament2"> Ik wil een team registreren</label><br>
                     </div>
                 </div>
             </section>
