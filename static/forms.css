@@ -443,7 +443,8 @@ form.unload .profile-details {
 
 .tournament-details > div {
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
+    position: relative;
 }
 
 .tournament-details > div:last-child {
@@ -456,7 +457,8 @@ form.unload .profile-details {
     height: 1px;
     background-color: #777;
     display: block;
-    margin-top: 25px;
+    position: absolute;
+    bottom: 30px;
 }
 
 .tournament-details > div.two-blocks {
