@@ -186,7 +186,7 @@
             </section>
 
             <p>
-                Inschrijven zal uiterlijk 20 december worden geopend.
+                Inschrijven zal uiterlijk 1 maart worden geopend.
             </p>
         </form>
 
