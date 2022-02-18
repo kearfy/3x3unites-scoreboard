@@ -75,7 +75,7 @@
                         Hoofddorp
                     </p>
                 </div>
-                <div class="two-blocks">
+                <div class="two-blocks no-seperator tournament-registrations">
                     <div>
                         <h3>
                             Tournament #1
@@ -89,7 +89,6 @@
                             Inschrijving als individu, mixed teams 12+
                         </p>
                         <div class="checkbox">
-                            <input type="hidden" name="tournament1" value="off">
                             <input type="checkbox" id="tournament1" name="tournament1" <?php echo $tournament1; ?>>
                             <label for="tournament1" class="checkmark"></label>
                             <label for="tournament1"> Ik doe mee</label><br>
@@ -109,7 +108,6 @@
                             Individuele inschrijving ook mogelijk
                         </p>
                         <div class="checkbox">
-                            <input type="hidden" name="tournament2" value="off">
                             <input type="checkbox" id="tournament2" name="tournament2" <?php echo $tournament2; ?>>
                             <label for="tournament2" class="checkmark"></label>
                             <label for="tournament2"> Ik doe mee</label><br>
@@ -121,7 +119,6 @@
                         Team registratie
                     </h3>
                     <div class="checkbox">
-                        <input type="hidden" name="team-registration" value="off">
                         <input type="checkbox" id="team-registration" name="team-registration" <?php echo $tournament2; ?>>
                         <label for="team-registration" class="checkmark"></label>
                         <label for="team-registration"> Ik wil een team registreren</label><br>
@@ -142,6 +139,19 @@
 
         <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.js"></script>
+        <script>
+            document.querySelector('.tournament-details .checkbox input[name=tournament2]').addEventListener('input', e => {
+                if (e.target.checked) {
+                    document.querySelector('.tournament-details .team-registration').style.display = 'flex';
+                    document.querySelector('.tournament-details .tournament-registrations').classList.remove('no-seperator');
+                } else {
+                    document.querySelector('.tournament-details .team-registration').style.display = null;
+                    document.querySelector('.tournament-details .tournament-registrations').classList.add('no-seperator');
+                }
+            });
+
+            document.querySelector('.tournament-details .checkbox input[name=tournament2]').dispatchEvent(new CustomEvent('input'));
+        </script>
     </body>
 </html>
 
