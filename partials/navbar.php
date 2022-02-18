@@ -7,6 +7,8 @@
     if ($signedin) {
         $user = $userModel->info();
         $enrolled = $users->metaGet($user->id, 'tournament1') || $users->metaGet($user->id, 'tournament2');
+    } else {
+        $enrolled = false;
     }
 
     function showSignedin($signedin, $content) {
