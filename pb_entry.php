@@ -119,8 +119,8 @@
                         Beheer spelers en het tournament.
                     </p>
                 </section>
-
-                <section class="transparent no-padding">
+                
+                <section class="transparent no-margin overflow-scroll">
                     <table>
                         <thead>
                             <th>
