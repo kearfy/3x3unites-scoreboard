@@ -32,6 +32,7 @@
 
         $tournament1 = ($users->metaGet($user->id, 'tournament1') == '1' ? 'checked' : '');
         $tournament2 = ($users->metaGet($user->id, 'tournament2') == '1' ? 'checked' : '');
+        $teamregistrationEnabled = $config->get('teamregistration-disabled') == '0';
 
                 // ======== ENROLLMENT IS ENABLED ======== \\
 ?>
@@ -62,9 +63,9 @@
                         10 APR 2022
                     </h1>
                     <div class="times">
-                        <p>11:00</p> 
+                        <p>10:15</p> 
                         <span class="line"></span> 
-                        <p>16:00</p>
+                        <p>15:30</p>
                     </div>
                 </div>
                 <div>
@@ -78,15 +79,15 @@
                 <div class="two-blocks no-seperator tournament-registrations">
                     <div>
                         <h3>
-                            Tournament #1
+                            Toernooi #1
                         </h3>
                         <div class="times">
-                            <p>11:00</p> 
+                            <p>10:30</p> 
                             <span class="line"></span> 
                             <p>13:00</p>
                         </div>
                         <p>
-                            Inschrijving als individu, mixed teams 12+
+                            Inschrijving als individu, mixed teams, leeftijd 12+
                         </p>
                         <div class="checkbox">
                             <input type="checkbox" id="tournament1" name="tournament1" <?php echo $tournament1; ?>>
@@ -96,7 +97,7 @@
                     </div>
                     <div>
                         <h3>
-                            Tournament #2
+                            Toernoei #2
                         </h3>
                         <div class="times">
                             <p>13:30</p> 
@@ -119,13 +120,13 @@
                         Team registratie
                     </h3>
                     <div class="checkbox">
-                        <input type="checkbox" id="team-registration" name="team-registration" <?php echo $tournament2; ?>>
+                        <input type="checkbox" id="team-registration" name="team-registration">
                         <label for="team-registration" class="checkmark"></label>
                         <label for="team-registration"> Ik wil een team registreren</label><br>
                     </div>
                 </div>
             </section>
-            <section class="note">
+            <section class="note" <?=($teamregistrationEnabled ? 'style="display:none;"' : '')?>>
                 <p>
                     Teamregistratie wordt binnenkort geopend.
                 </p>
@@ -139,19 +140,22 @@
 
         <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.js"></script>
-        <script>
-            document.querySelector('.tournament-details .checkbox input[name=tournament2]').addEventListener('input', e => {
-                if (e.target.checked) {
-                    document.querySelector('.tournament-details .team-registration').style.display = 'flex';
-                    document.querySelector('.tournament-details .tournament-registrations').classList.remove('no-seperator');
-                } else {
-                    document.querySelector('.tournament-details .team-registration').style.display = null;
-                    document.querySelector('.tournament-details .tournament-registrations').classList.add('no-seperator');
-                }
-            });
+        
+        <?php if ($teamregistrationEnabled) { ?>
+            <script>
+                document.querySelector('.tournament-details .checkbox input[name=tournament2]').addEventListener('input', e => {
+                    if (e.target.checked) {
+                        document.querySelector('.tournament-details .team-registration').style.display = 'flex';
+                        document.querySelector('.tournament-details .tournament-registrations').classList.remove('no-seperator');
+                    } else {
+                        document.querySelector('.tournament-details .team-registration').style.display = null;
+                        document.querySelector('.tournament-details .tournament-registrations').classList.add('no-seperator');
+                    }
+                });
 
-            document.querySelector('.tournament-details .checkbox input[name=tournament2]').dispatchEvent(new CustomEvent('input'));
-        </script>
+                document.querySelector('.tournament-details .checkbox input[name=tournament2]').dispatchEvent(new CustomEvent('input'));
+            </script>
+        <?php } ?>
     </body>
 </html>
 
