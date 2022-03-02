@@ -82,9 +82,9 @@
                             Toernooi #1
                         </h3>
                         <div class="times">
-                            <p>10:30</p> 
+                            <p>10:15</p> 
                             <span class="line"></span> 
-                            <p>12:45</p>
+                            <p>12:15</p>
                         </div>
                         <p>
                             Inschrijving als individu, mixed teams, leeftijd 12+
@@ -97,12 +97,12 @@
                     </div>
                     <div>
                         <h3>
-                            Toernoei #2
+                            Toernooi #2
                         </h3>
                         <div class="times">
                             <p>13:15</p> 
                             <span class="line"></span> 
-                            <p>15:30</p>
+                            <p>15:45</p>
                         </div>
                         <p>
                             Inschrijving als team 16+ <br>
