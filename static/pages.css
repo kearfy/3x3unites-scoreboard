@@ -1,4 +1,4 @@
-body {
+html, body {
 	background-color: #222;
 	width: 100%;
 	height: 100vh;
@@ -9,7 +9,7 @@ nav {
 	width: calc(90% - 40px);
 	height: 20px;
 	padding: 20px;
-	margin: 40px 5%;
+	margin: 40px 5% 50px;
 	background-color: #333;
 	border-radius: 15px;
 
@@ -61,6 +61,15 @@ nav > section a:not(:last-child) {
 	margin-right: 15px;
 }
 
+.content {
+	width: 100%;
+	min-height: calc(100vh - 300px);
+	padding-bottom: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .notready {
     display: flex;
 	flex-direction: column;
@@ -75,17 +84,11 @@ nav > section a:not(:last-child) {
     -webkit-box-shadow: 0px 5px 35px -10px rgba(0, 0, 0, 0.85);
     -moz-box-shadow: 0px 5px 35px -10px rgba(0, 0, 0, 0.85);
     box-shadow: 0px 5px 35px -10px rgba(0, 0, 0, 0.85);
-
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	margin: auto;
 }
 
 .notready svg {
 	height: 250px;
+	max-width: 100%;
 }
 
 .notready p {
