@@ -23,9 +23,9 @@
         if (Request::method() == 'POST') {
             $postdata = (object) Validate::removeUnlisted($dataset, $postdata);
 
-            if (isset($postdata->tournament1)) $users->metaSet($user->id, 'tournament1', ($postdata->tournament1 == 'on' ? 1 : 0));
-            if (isset($postdata->tournament2)) $users->metaSet($user->id, 'tournament2', ($postdata->tournament2 == 'on' ? 1 : 0));
-    
+            $users->metaSet($user->id, 'tournament1', (isset($postdata->tournament1) && $postdata->tournament1 == 'on' ? 1 : 0));
+            $users->metaSet($user->id, 'tournament2', (isset($postdata->tournament2) && $postdata->tournament2 == 'on' ? 1 : 0));
+
             Header::Location(SITE_LOCATION);
             die();
         }
