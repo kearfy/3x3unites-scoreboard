@@ -63,7 +63,7 @@
                         10 APR 2022
                     </h1>
                     <div class="times">
-                        <p>10:15</p> 
+                        <p>10:30</p> 
                         <span class="line"></span> 
                         <p>15:30</p>
                     </div>
@@ -84,7 +84,7 @@
                         <div class="times">
                             <p>10:30</p> 
                             <span class="line"></span> 
-                            <p>13:00</p>
+                            <p>12:45</p>
                         </div>
                         <p>
                             Inschrijving als individu, mixed teams, leeftijd 12+
@@ -100,9 +100,9 @@
                             Toernoei #2
                         </h3>
                         <div class="times">
-                            <p>13:30</p> 
+                            <p>13:15</p> 
                             <span class="line"></span> 
-                            <p>16:00</p>
+                            <p>15:30</p>
                         </div>
                         <p>
                             Inschrijving als team 16+ <br>
