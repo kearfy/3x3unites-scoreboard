@@ -70,7 +70,7 @@
                 </div>
                 <div>
                     <h3>
-                        Sportcomplex Koning Willem-Alexander
+                        Sportfondsen Het Spectrum
                     </h3>
                     <p>
                         Hoofddorp
@@ -185,13 +185,15 @@
             </section>
             <section class="title">
                 <h1>
-                    Wordt binnenkort geopend
+                    Wordt later vandaag geopend
                 </h1>
-            </section>
+            </section> 
 
-            <p>
-                Inschrijven zal uiterlijk 1 maart worden geopend.
-            </p>
+            <section class="note">
+                <p>
+                    Teamregistratie wordt later geopend.
+                </p>
+            </section>
         </form>
 
         <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
