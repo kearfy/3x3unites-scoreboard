@@ -7,6 +7,7 @@
     use Helper\ApiResponse as Respond;
     use Helper\Request;
     use Helper\Header;
+    use Registry\Dashboard;
 
     use Registry\Event;
 
@@ -17,6 +18,12 @@
                 "signup-disabled" => 0,
                 "enrollment-disabled" => 0,
                 "teamregistration-disabled" => 0
+            ));
+
+            Dashboard::register("module-config-scoreboard", array(
+                "icon" => "award",
+                "title" => "Tournament",
+                "url" => "module-config/scoreboard"
             ));
 
             Event::listen('request-processed', function($info) {
@@ -123,7 +130,7 @@
                 <section class="transparent no-margin overflow-scroll">
                     <table>
                         <thead>
-                            <th>
+                            <th class="smaller">
                                 ID
                             </th>
                             <th>
