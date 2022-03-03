@@ -2,7 +2,12 @@
     $controller = new Library\Controller;
     $user = $controller->__model('user');
     if ($user->signedin()) {
-        Helper\Header::Location(SITE_LOCATION . 'profile');
+        if ($user->check('site.tournament-admin')) {
+            Helper\Header::Location(SITE_LOCATION . 'configuration');
+        } else {
+            Helper\Header::Location(SITE_LOCATION . 'profile');
+        }
+        
         die();
     }
 ?>
