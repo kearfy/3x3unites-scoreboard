@@ -175,7 +175,7 @@ form section.input-fields .expandable-input input {
 
 form section.input-fields .expandable-input .hidden-content {
     width: calc(100% - 50px);
-    height: 112px;
+    height: 122px;
     overflow-y: auto;
     background-color: #bbb;
     padding: 15px 25px 25px;
