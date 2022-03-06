@@ -208,8 +208,8 @@
                             </div>
                         </div>
                         <div class="two-inputs">
-                            <input type="number" :value="newplayerheight" placeholder="Lengte" @input="this.errorMessage = ''">
-                            <input type="number" :value="newplayerage" placeholder="Leeftijd" @input="this.errorMessage = ''">
+                            <input type="number" :value="newplayerheight" min="100" max="300" placeholder="Lengte" @input="this.errorMessage = ''">
+                            <input type="number" :value="newplayerage" min="12" max="99" placeholder="Leeftijd" @input="this.errorMessage = ''">
                         </div>
                         
                         <button class="button" type="button" @click="addPlayer()">
