@@ -144,6 +144,7 @@ form section.input-fields {
 
 form section.input-fields input:not([type=radio]):not([type=checkbox]) {
     width: calc(100% - 50px);
+    height: 18px;
     padding: 15px 25px;
     background: #ddd;
     border: none;
@@ -152,6 +153,46 @@ form section.input-fields input:not([type=radio]):not([type=checkbox]) {
     color: black;
     font-size: 15px;
     border-radius: 10px;
+}
+
+form section.input-fields .expandable-input {
+    width: 100%;
+    border-radius: 10px;
+    height: 210px;
+    transition: height .3s ease;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+form section.input-fields .expandable-input.closed {
+    height: 48px;
+}
+
+form section.input-fields .expandable-input input {
+    margin-bottom: 0px !important;
+    border-radius: 0px !important;
+}
+
+form section.input-fields .expandable-input .hidden-content {
+    width: calc(100% - 50px);
+    height: 112px;
+    overflow-y: auto;
+    background-color: #bbb;
+    padding: 15px 25px 25px;
+    color: black;
+}
+
+form section.input-fields .expandable-input .hidden-content * {
+    color: black;
+}
+
+form section.input-fields .two-inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+form section.input-fields .two-inputs input:not([type=radio]):not([type=checkbox]) {
+    width: calc(45% - 50px);
 }
 
 form section.input-fields textarea {
@@ -269,7 +310,7 @@ form section.finish-signup {
     justify-content: center;
 }
 
-form section.finish-signup .button {
+form section .button {
     width: 250px;
     height: 60px;
     background-color: #000;
@@ -278,14 +319,23 @@ form section.finish-signup .button {
     border: 3px solid #888;
     cursor: pointer;
     border-radius: 15px;
+    margin-top: 10px;
+    font-size: 16px;
 }
 
-form section.finish-signup .button:hover {
+form section .button.smaller {
+    width: 200px;
+    height: 50px;
+    line-height: 45px;
+    font-size: 13px;
+}
+
+form section .button:hover {
     background-color: transparent;
     border: 3px solid #000;
 }
 
-form section.finish-signup .button:active {
+form section .button:active {
     background-color: #000;
 }
 
@@ -551,6 +601,61 @@ form.unload .profile-details {
 
 /* SPECIFIC FOR ENROLLMENT PAGE */
 
-.tournament-details .team-registration {
-    display: none;
+.tournament-details .team-registration .error-message {
+    padding-top: 20px;
+    color: red;
+}
+
+.tournament-details .team-registration table {
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.tournament-details .team-registration table td {
+    color: #bbb;
+    padding: 10px 0px 0px;
+}
+
+.tournament-details .team-registration table td:last-child {
+    text-align: right;
+}
+
+.tournament-details .team-registration table.suggestions td {
+    color: #444 !important;
+}
+
+.tournament-details .team-registration table th:not(:last-child):not(:first-child) {
+    width: 30%;
+}
+
+.tournament-details .team-registration table th:first-child {
+    width: 40%;
+}
+
+.tournament-details .team-registration table th:last-child {
+    min-width: 90px;
+    text-align: right;
+}
+
+.tournament-details .team-registration table td a {
+    color: red;
+}
+
+.tournament-details .team-registration table.suggestions td a {
+    color: green;
+}
+
+.tournament-details .team-registration table td a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.tournament-details .team-registration .players {
+    padding-top: 20px;
+}
+
+.tournament-details .team-registration .add-player {
+    width: 100%;   
+    padding-top: 40px; 
 }

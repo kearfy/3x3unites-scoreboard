@@ -46,6 +46,9 @@
                 } else if ($url[0] == 'configuration') {
                     array_shift($url);
                     Header::Location(SITE_LOCATION . 'pb-dashboard/module-config/scoreboard/' . join('/', $url));
+                } else if ($url[0] == 'api') {
+                    array_shift($url);
+                    Request::rewrite('/pb-loader/module/scoreboard/api/' . join('/', $url));
                 } else if ($url[0] == 'signup') {
                     if (isset($url[1])) {
                         if ($url[1] == 'profile-prefill') {
