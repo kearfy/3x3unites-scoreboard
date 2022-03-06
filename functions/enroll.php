@@ -36,7 +36,7 @@
             $users->metaSet($user->id, 'teamadmin', (isset($postdata->teamadmin) && $postdata->teamadmin == 'on' ? 1 : 0));
             $objectManager->purge('scoreboard-team', $team);
 
-            if ($users->metaGet($user->id, 'teamadmin') == '1') {
+            if ($users->metaGet($user->id, 'tournament2') == '1' && $users->metaGet($user->id, 'teamadmin') == '1') {
                 $objectManager->create('scoreboard-team', $team);
                 $objectManager->set('scoreboard-team', $team, 'player1-name', $user->fullname);
                 $objectManager->set('scoreboard-team', $team, 'player1-height', $users->metaGet($user->id, 'height'));
