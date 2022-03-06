@@ -195,6 +195,17 @@ form section.input-fields .two-inputs input:not([type=radio]):not([type=checkbox
     width: calc(45% - 50px);
 }
 
+@media (max-width: 700px) {
+    form section.input-fields .two-inputs {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form section.input-fields .two-inputs input:not([type=radio]):not([type=checkbox]) {
+        width: calc(100% - 50px) !important;
+    }
+}
+
 form section.input-fields textarea {
     width: calc(100% - 50px);
     padding: 20px 25px;
