@@ -22,7 +22,7 @@ const app = new Rable({
             this.errorMessage = '';
             var suggestions = [];
             if (this.newplayername !== '') this.availableplayers.forEach(p => {
-                if (suggestions.length < 3 && p.name.toLowerCase().includes(this.newplayername.toLowerCase())) {
+                if (suggestions.length < 3 && p.name.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "").includes(this.newplayername.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, ""))) {
                     suggestions.push(p);
                 }
             });
