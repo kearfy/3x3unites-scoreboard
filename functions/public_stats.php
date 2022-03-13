@@ -20,7 +20,7 @@
                     <br>
                     <p>
                         Registraties staan open!<br><br>
-                        Spelers kunnen zich Registreren en een team aanmaken.
+                        Spelers kunnen zich registreren en een team aanmaken.
                     </p>
 
                     <div class="button-container">
