@@ -22,7 +22,12 @@
 
             fetch(SITE_LOCATION + '/pb-api/auth/validate-password', {
                 method: 'post',
-                body: data
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    password: inputEl.value
+                })
             }).then(res => res.json()).then(res => {
                 listEl.innerHTML = '';
                 var finalEl = '';
