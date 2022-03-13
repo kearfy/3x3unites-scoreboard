@@ -61,6 +61,60 @@ nav > section a:not(:last-child) {
 	margin-right: 15px;
 }
 
+table {
+	width: 100%;	
+	text-align: left;
+	border-collapse: collapse;
+}
+
+table thead tr {
+	background-color: #222;
+}
+
+table tbody tr:nth-child(even) {
+	background-color: #2d2d2d;
+}
+
+table th,
+table td {
+	padding: 13px 24px 12px;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    width: 250px;
+    height: 60px;
+    background-color: #000;
+    text-align: center;
+    line-height: 59px;
+    border: 3px solid #888;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.button.smaller {
+    width: 200px;
+    height: 50px;
+    line-height: 45px;
+    font-size: 13px;
+}
+
+.button:hover {
+    background-color: transparent;
+    border: 3px solid #000;
+}
+
+.button:active {
+    background-color: #000;
+}
+
 .content {
 	width: 100%;
 	min-height: calc(100vh - 300px);
@@ -70,15 +124,22 @@ nav > section a:not(:last-child) {
     align-items: center;
 }
 
-.notready {
-    display: flex;
-	flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+.content .sections-container {
+	width: 90%;
+	display: flex;
+	margin: 0px 5% 30px;
+}
+
+@media (max-width: 700px) {
+	.content .sections-container {
+		flex-direction: column;
+	}
+}
+
+.content section {
     width: calc(90% - 100px);
-    max-width: 650px;
     padding: 50px;
-    height: 400px;
+	margin: 0px 5% 30px;
     background-color: #333;
     border-radius: 25px;
     -webkit-box-shadow: 0px 5px 35px -10px rgba(0, 0, 0, 0.85);
@@ -86,12 +147,72 @@ nav > section a:not(:last-child) {
     box-shadow: 0px 5px 35px -10px rgba(0, 0, 0, 0.85);
 }
 
-.notready svg {
+.content .sections-container section {
+	width: calc(50% - 100px - 2.5vw);
+	margin: 0px;
+}
+
+.content .sections-container section:not(:last-child) {
+	margin-right: 5vw;
+}
+
+@media (max-width: 700px) {
+	.content .sections-container section {
+		width: calc(100% - 100px);
+		margin: 0px;
+	}
+
+	.content .sections-container section:not(:last-child) {
+		margin-right: 0px;
+		margin-bottom: 30px;
+	}
+}
+
+.general-notice {
+    display: flex;
+	flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px;
+}
+
+.general-notice svg {
 	height: 250px;
 	max-width: 100%;
 }
 
-.notready p {
+.general-notice p {
     font-size: 18px;
 	text-align: center;
+	margin-bottom: 10px;
+}
+
+table.tournament-overview {
+	margin: 40px 0px 20px;
+}
+
+table.tournament-overview tr {
+	background-color: #333 !important;
+}
+
+table.tournament-overview tr:not(:last-child) {
+	border-bottom: 2px solid #2d2d2d;
+}
+
+table.tournament-overview th {
+	background-color: #2d2d2d;
+}
+
+table.tournament-overview td {
+	width: 100%;
+}
+
+table.dates tbody td:not(:first-child) {
+	padding-left: 30px;
+}
+
+.notice {
+	color: #bbb;
+	font-size: 14px;
+	padding-left: 15px;
 }

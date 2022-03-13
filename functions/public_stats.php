@@ -13,12 +13,116 @@
         <?php require_once(DYNAMIC_DIR . '/modules/scoreboard/partials/navbar.php'); ?>
         
         <div class="content">
-            <div class="notready">
-                <?php echo file_get_contents(DYNAMIC_DIR . '/modules/scoreboard/static/basketball.svg'); ?>
-                <p>
-                    Helaas is de website nog niet afgerond, maar binnenkort wel.<br><br>
-                    Spelers kunnen zich alvast <a href="/signup">Registreren</a>.
-                </p>
+            <div class="sections-container">
+                <section class="general-notice">
+                    <?php echo file_get_contents(DYNAMIC_DIR . '/modules/scoreboard/static/basketball.svg'); ?>
+
+                    <br>
+                    <p>
+                        Registraties staan open!<br><br>
+                        Spelers kunnen zich Registreren en een team aanmaken.
+                    </p>
+
+                    <div class="button-container">
+                        <a href="/signup" class="button">
+                            Registreren
+                        </a>
+                    </div>
+                </section>
+                <section class="dates-overview">
+                    <h2>
+                        Overzicht toernooien
+                    </h2>
+
+                    <table class="tournament-overview">
+                        <tr>
+                            <th>
+                                Datum
+                            </th>
+                            <td>
+                                10-04-2022
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Locatie
+                            </th>
+                            <td>
+                                Sportfondsen Het Spectrum
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Plaats
+                            </th>
+                            <td>
+                                Hoofddorp
+                            </td>
+                        </tr>
+                    </table>
+
+                    <br>
+                    <table class="dates">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Starttijd</th>
+                                <th>Eindtijd</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Toernooi #1
+                                </td>
+                                <td>
+                                    10:15
+                                </td>
+                                <td>
+                                    12:15
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Middenstuk
+                                </td>
+                                <td>
+                                    12:15
+                                </td>
+                                <td>
+                                    13:15
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Toernooi #2
+                                </td>
+                                <td>
+                                    13:15
+                                </td>
+                                <td>
+                                    15:45
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Afsluiting
+                                </td>
+                                <td>
+                                    15:45
+                                </td>
+                                <td>
+                                    16:00
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br>
+                    <p class="notice">
+                        * De indeling kan iets afwijken of nog worden aangepast.
+                    </p>
+                </section>
             </div>
         </div>
         
