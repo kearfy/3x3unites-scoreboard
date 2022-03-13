@@ -104,6 +104,8 @@
             </section>
         </form>
 
+        <?php require_once(DYNAMIC_DIR . '/modules/scoreboard/partials/help-button.php'); ?>
+
         <script>
             const SITE_LOCATION = '<?php echo SITE_LOCATION; ?>';
         </script>
@@ -148,6 +150,8 @@
                 Registratie zal uiterlijk 20 december worden geopend.
             </p>
         </form>
+
+        <?php require_once(DYNAMIC_DIR . '/modules/scoreboard/partials/help-button.php'); ?>
 
         <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.js"></script>

@@ -112,6 +112,9 @@
             </section>
         </form>
 
+        <?php require_once(DYNAMIC_DIR . '/modules/scoreboard/partials/help-button.php'); ?>
+
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.js"></script>
     </body>
 </html>
