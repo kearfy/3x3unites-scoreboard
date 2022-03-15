@@ -107,5 +107,5 @@ const app = new Rable({
 
 app.mount('body');
 
-fetch('/api/list-players').then(res => res.json()).then(res => app.data.availableplayers = res);
+fetch('/api/players-suggestions').then(res => res.json()).then(res => app.data.availableplayers = res);
 if (payload.teamregistration) fetch('/api/team/' + payload.team).then(res => res.json()).then(res => app.data.players = res.slice(1));

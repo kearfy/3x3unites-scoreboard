@@ -5,9 +5,8 @@
     use Helper\Respond;
 
     if (isset($params[0])) {
-        if ($params[0] == 'list-players') {
+        if ($params[0] == 'players-suggestions') {
             $users = new Users;
-            $controller = new Controller;
             $players = array();
             foreach($users->list() as $current) {
                 $player = $users->metaGet($current['id'], 'type') == 'player';
@@ -46,6 +45,41 @@
                 }
             } else {
                 die('missing team');
+            }
+        } else if ($params[0] == 'teams') {
+            $objectManager = new Objects;
+            $teams = [];
+            foreach($objectManager->list('scoreboard-team', 0) as $t) {
+                $t = $t['name'];
+                $teams[$t] = array();
+                $raw = $objectManager->properties('scoreboard-team', $t, true);
+                foreach($raw as $key => $value) {
+                    $id = substr($key, 6, 1) - 1;
+                    $key = substr($key, 8);
+                    if (!isset($result[$id])) $result[$t][$id] = [];
+                    $teams[$t][$id][$key] = $value;
+                }
+            }
+
+            Respond::JSON($teams);
+        } else if ($params[0] == 'players') {
+            $users = new Users;
+            $controller = new Controller;
+            $userModel = $controller->__model('user');
+            
+            if ($userModel->check('site.tournament-admin')) {
+                $players = array();
+                foreach($users->list() as $current) {
+                    $type = $users->metaGet($current['id'], 'type');
+                    if ($type && $type == 'player') {
+                        unset($current['password']);
+                        array_push($players, $current);
+                    }
+                }
+
+                Respond::JSON($players);
+            } else {
+                die('not authorized');
             }
         } else {
             die('unknown api');

@@ -3,6 +3,7 @@
 
     use Library\ModuleConfig;
     use Library\Controller;
+    use Library\Assets;
     use Library\Users;
     use Helper\ApiResponse as Respond;
     use Helper\Request;
@@ -77,6 +78,10 @@
                     array_shift($url);
                     Request::rewrite('/pb-loader/module/scoreboard/view_player/' . join('/', $url));
                     $canRedirect = true;
+                } else if ($url[0] == 'team') {
+                    array_shift($url);
+                    Request::rewrite('/pb-loader/module/scoreboard/team/' . join('/', $url));
+                    $canRedirect = true;
                 }
 
                 if ($canRedirect && $isPlayer && !$profileFilled) {
@@ -102,6 +107,13 @@
         }
 
         public function configurator($params) {
+            $assets = new Assets;
+            $assets->registerBody("script", "configurator.js", array(
+                "permanent" => true,
+                "origin" => "module:scoreboard",
+                "properties" => 'type="module"'
+            ));
+
             $controller = new Controller;
             $userModel = $controller->__model('user');
             if (!$userModel->check('site.tournament-admin')) {
@@ -109,56 +121,6 @@
                 return;
             }
 
-            $users = new Users;
-            $players = array();
-            $tableContent = '';
-            foreach($users->list() as $current) {
-                $type = $users->metaGet($current['id'], 'type');
-                if ($type && $type == 'player') {
-                    $item = (object) $current;
-                    $tableContent .= '<tr id="' . $item->id. '"><td>' . $item->id . '</td><td>' . $item->firstname . ' ' . $item->lastname . '</td><td>' . $item->email . '</td><td>' . $item->created . '</td><td>' . $item->updated . '</td><td><a href="' . SITE_LOCATION . 'profile/' . $item->id . '">Speler bekijken</a></tr>';
-                }
-            }
-
-            ?>
-                <section class="page-introduction">
-                    <h1>
-                        Tournament administratie
-                    </h1>
-                    <p>
-                        Beheer spelers en het tournament.
-                    </p>
-                </section>
-                
-                <section class="transparent no-margin overflow-scroll">
-                    <table>
-                        <thead>
-                            <th class="smaller">
-                                ID
-                            </th>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                E-mail
-                            </th>
-                            <th>
-                                Created
-                            </th>
-                            <th>
-                                Updated
-                            </th>
-                            <th>
-                                Acties
-                            </th>
-                        </thead>
-                        <tbody>
-                            <?php
-                                echo $tableContent;
-                            ?>
-                        </tbody>
-                    </table>
-                </section>
-            <?php
+            require_once 'configurator.php';
         }
     }
