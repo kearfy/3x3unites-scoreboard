@@ -2,6 +2,7 @@
     use Helper\Header;
     use Library\Controller;
     use Library\Users;
+    use Library\Objects;
 
     $controller = new Controller;
     $userModel = $controller->__model('user');
@@ -18,9 +19,16 @@
                 $users = new Users;
                 $user = $users->info($params[0]);
                 $self = false;
+            } else {
+                Header::Location(SITE_LOCATION . 'profile');
+                die();
             }
         }
     }
+
+    $registeredTeam = 'team-' . $user->id;
+    $objectManager = new Objects;
+    if (!$objectManager->exists('scoreboard-team', $registeredTeam)) $registeredTeam = "!0!";
 ?>
 
 <!DOCTYPE html>
@@ -169,6 +177,23 @@
                         ?>
                     </p>
                 </div>
+                <div class="full-width team-table" :if="players.length > 0">
+                    <h3>Geregistreerd team</h3>
+                    <table>
+                        <thead>
+                            <th>Naam</th>
+                            <th>Lengte</th>
+                            <th>Leeftijd</th>
+                        </thead>
+                        <tbody>
+                            <tr class="player" :for="players as index => player">
+                                <td>{{player.name}}</td>
+                                <td>{{player.height}}</td>
+                                <td>{{player.age}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <section class="buttons">
                     <?php if ($self) { ?><a href="<?php echo SITE_LOCATION; ?>enroll">Inschrijving aanpassen</a><?php } ?>
@@ -178,7 +203,14 @@
 
         <?php require_once(DYNAMIC_DIR . '/modules/scoreboard/partials/help-button.php'); ?>
 
+        <script>
+            const payload = {
+                team: '<?=$registeredTeam?>'
+            }
+        </script>
+
         <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.js"></script>
+        <script src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/profile.js" type="module"></script>
     </body>
 </html>

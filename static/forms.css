@@ -610,24 +610,31 @@ form.unload .profile-details {
     }
 }
 
-/* SPECIFIC FOR ENROLLMENT PAGE */
+/* SPECIFIC FOR ENROLLMENT PAGE AND PLAYERS TABLE ON PROFILE PAGE */
 
 .tournament-details .team-registration .error-message {
     padding-top: 20px;
     color: red;
 }
 
+.team-table table {
+    padding-top: 5px;
+}
+
+.team-table table,
 .tournament-details .team-registration table {
     margin-top: 10px;
     width: 100%;
     text-align: left;
 }
 
+.team-table table td,
 .tournament-details .team-registration table td {
     color: #bbb;
     padding: 10px 0px 0px;
 }
 
+.team-table table td:last-child,
 .tournament-details .team-registration table td:last-child {
     text-align: right;
 }
@@ -636,14 +643,17 @@ form.unload .profile-details {
     color: #444 !important;
 }
 
+.team-table table th:not(:last-child):not(:first-child),
 .tournament-details .team-registration table th:not(:last-child):not(:first-child) {
     width: 30%;
 }
 
+.team-table table th:first-child,
 .tournament-details .team-registration table th:first-child {
     width: 40%;
 }
 
+.team-table table th:last-child,
 .tournament-details .team-registration table th:last-child {
     min-width: 90px;
     text-align: right;
