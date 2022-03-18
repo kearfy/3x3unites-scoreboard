@@ -29,13 +29,16 @@
             ));
 
             Route::register('root', '__index', '/pb-loader/module/scoreboard/public_stats');
-            Route::register('root', 'api', '/pb-loader/module/scoreboard/api');
             Route::register('root', 'signin', '/pb-loader/module/scoreboard/signin');
             Route::register('root', 'profile', '/pb-loader/module/scoreboard/profile');
             Route::register('root', 'enroll', '/pb-loader/module/scoreboard/enroll');
             Route::register('root', 'player', '/pb-loader/module/scoreboard/view_player');
             Route::register('root', 'team', '/pb-loader/module/scoreboard/team');
 
+            Route::register('root', 'api', function($params) {
+                Request::rewrite('/pb-loader/module/scoreboard/api/' . join('/', $params));   
+            });
+            
             Route::register('root', 'configuration', function($params) { Header::Location(SITE_LOCATION . 'pb-dashboard/module-config/scoreboard/' . join('/', $params)); });
             Route::register('root', 'signup', function($params) {
                 if (isset($params[0]) && $params[0] == 'profile-prefill') {
