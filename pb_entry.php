@@ -9,6 +9,7 @@
     use Helper\Request;
     use Helper\Header;
     use Registry\Dashboard;
+    use Registry\Route;
 
     use Registry\Event;
 
@@ -27,66 +28,50 @@
                 "url" => "module-config/scoreboard"
             ));
 
+            Route::register('root', '__index', '/pb-loader/module/scoreboard/public_stats');
+            Route::register('root', 'api', '/pb-loader/module/scoreboard/api');
+            Route::register('root', 'signin', '/pb-loader/module/scoreboard/signin');
+            Route::register('root', 'profile', '/pb-loader/module/scoreboard/profile');
+            Route::register('root', 'enroll', '/pb-loader/module/scoreboard/enroll');
+            Route::register('root', 'player', '/pb-loader/module/scoreboard/view_player');
+            Route::register('root', 'team', '/pb-loader/module/scoreboard/team');
+
+            Route::register('root', 'configuration', function($params) { Header::Location(SITE_LOCATION . 'pb-dashboard/module-config/scoreboard/' . join('/', $params)); });
+            Route::register('root', 'signup', function($params) {
+                if (isset($params[0]) && $params[0] == 'profile-prefill') {
+                    Request::rewrite('/pb-loader/module/scoreboard/profile_prefill');
+                } else {
+                    Request::rewrite('/pb-loader/module/scoreboard/signup');
+                }
+            });
+
             Event::listen('request-processed', function($info) {
-                $controller = new Controller;
-                $userModel = $controller->__model('user');
-                $user = $userModel->info();
-    
-                $isPlayer = false;
-                $profileFilled = false;
-                $canRedirect = false;
-                if ($user) foreach($user->meta as $metaitem) {
-                    if ($metaitem['name'] == 'type' && $metaitem['value'] == 'player') $isPlayer = true;
-                    if ($metaitem['name'] == 'profile-filled' && $metaitem['value'] == '1') $profileFilled = true;
-                }
-
-                $url = explode('/', $info->url);
-                if ($info->url == '/') {
-                    Request::rewrite('/pb-loader/module/scoreboard/public_stats');
+                if (!$info->locked_controller) {
+                    $url = (substr($info->url, 0, 1) == '/' ? $info->url : '/' . $info->url);
+                    $allowed = ['/api', '/configuration', '/signup/profile-prefill'];
                     $canRedirect = true;
-                } else if ($url[0] == 'configuration') {
-                    array_shift($url);
-                    Header::Location(SITE_LOCATION . 'pb-dashboard/module-config/scoreboard/' . join('/', $url));
-                } else if ($url[0] == 'api') {
-                    array_shift($url);
-                    Request::rewrite('/pb-loader/module/scoreboard/api/' . join('/', $url));
-                } else if ($url[0] == 'signup') {
-                    if (isset($url[1])) {
-                        if ($url[1] == 'profile-prefill') {
-                            Request::rewrite('/pb-loader/module/scoreboard/profile_prefill');
-                        } else {
-                            Request::rewrite('/pb-loader/module/scoreboard/signup');
-                            $canRedirect = true;
+                    foreach($allowed as $item) $canRedirect = ($canRedirect ? substr($url, 0, strlen($item)) !== $item : false);
+                    if ($canRedirect) {
+                        $controller = new Controller;
+                        $userModel = $controller->__model('user');
+                        $user = $userModel->info();
+            
+                        if ($user) {
+                            $isPlayer = false;
+                            $profileFilled = false;
+
+                            foreach($user->meta as $metaitem) {
+                                if ($metaitem['name'] == 'type' && $metaitem['value'] == 'player') $isPlayer = true;
+                                if ($metaitem['name'] == 'profile-filled' && $metaitem['value'] == '1') $profileFilled = true;
+                            }
+
+                            if ($isPlayer && !$profileFilled) {
+                                Header::Location(SITE_LOCATION . 'signup/profile-prefill');
+                                die();  
+                            }
                         }
-                    } else {
-                        Request::rewrite('/pb-loader/module/scoreboard/signup');
-                        $canRedirect = true;
-                    }
-                } else if ($url[0] == 'signin') {
-                    array_shift($url);
-                    Request::rewrite('/pb-loader/module/scoreboard/signin/' . join('/', $url));
-                    $canRedirect = true;
-                } else if ($url[0] == 'profile') {
-                    array_shift($url);
-                    Request::rewrite('/pb-loader/module/scoreboard/profile/' . join('/', $url));
-                    $canRedirect = true;
-                } else if ($url[0] == 'enroll') {
-                    array_shift($url);
-                    Request::rewrite('/pb-loader/module/scoreboard/enroll/' . join('/', $url));
-                    $canRedirect = true;
-                } else if ($url[0] == 'player') {
-                    array_shift($url);
-                    Request::rewrite('/pb-loader/module/scoreboard/view_player/' . join('/', $url));
-                    $canRedirect = true;
-                } else if ($url[0] == 'team') {
-                    array_shift($url);
-                    Request::rewrite('/pb-loader/module/scoreboard/team/' . join('/', $url));
-                    $canRedirect = true;
-                }
-
-                if ($canRedirect && $isPlayer && !$profileFilled) {
-                    Header::Location(SITE_LOCATION . 'signup/profile-prefill');
-                }
+                    } 
+                }               
             });
         }
 
