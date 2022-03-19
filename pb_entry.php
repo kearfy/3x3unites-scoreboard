@@ -30,10 +30,18 @@
 
             Route::register('root', '__index', '/pb-loader/module/scoreboard/public_stats');
             Route::register('root', 'signin', '/pb-loader/module/scoreboard/signin');
-            Route::register('root', 'profile', '/pb-loader/module/scoreboard/profile');
             Route::register('root', 'enroll', '/pb-loader/module/scoreboard/enroll');
-            Route::register('root', 'player', '/pb-loader/module/scoreboard/view_player');
-            Route::register('root', 'team', '/pb-loader/module/scoreboard/team');
+            Route::register('root', 'team', function($params) {
+                Request::rewrite('/pb-loader/module/scoreboard/team/' . join('/', $params));
+            });
+
+            Route::register('root', 'profile', function($params) {
+                Request::rewrite('/pb-loader/module/scoreboard/profile/' . join('/', $params));
+            });
+
+            Route::register('root', 'player', function($params) {
+                Request::rewrite('/pb-loader/module/scoreboard/view_player/' . join('/', $params));
+            });
 
             Route::register('root', 'api', function($params) {
                 Request::rewrite('/pb-loader/module/scoreboard/api/' . join('/', $params));   
