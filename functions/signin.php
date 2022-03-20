@@ -44,7 +44,7 @@
                 <input type="email" placeholder="E-mailadres" name="identifier" required>
                 <input type="password" placeholder="Wachtwoord" name="password" required>
             </section>
-            <section class="finish-signup">
+            <section class="finish-signup" style="flex-direction: column; align-items: center;">
                 <button class="button">
                     Doorgaan
                 </button>
