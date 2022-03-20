@@ -216,3 +216,7 @@ table.dates tbody td:not(:first-child) {
 	font-size: 14px;
 	padding-left: 15px;
 }
+
+.dates-overview {
+	overflow-x: auto;
+}
