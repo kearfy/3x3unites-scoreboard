@@ -48,6 +48,7 @@
                 <button class="button">
                     Doorgaan
                 </button>
+                <a href="<?php echo SITE_LOCATION; ?>pb-auth/reset-password">Reset wachtwoord</a>
             </section>
         </form>
 
