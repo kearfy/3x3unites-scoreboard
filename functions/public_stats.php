@@ -1,3 +1,9 @@
+<?php
+    $controller = new \Library\Controller;
+    $userModel = $controller->__model('user');
+    $signedin = $userModel->signedin();
+?>
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -20,12 +26,12 @@
                     <br>
                     <p>
                         Registraties staan open!<br><br>
-                        Spelers kunnen zich registreren en een team aanmaken.
+                        <?=$signedin ? "Je kunt je nu direct inschrijven!" : "Spelers kunnen zich registreren en een team aanmaken."?>
                     </p>
 
                     <div class="button-container">
-                        <a href="/signup" class="button">
-                            Registreren
+                        <a href="/<?=$signedin ? "enroll" : "signup"?>" class="button">
+                            <?=$signedin ? "Inschrijven" : "Registreren"?>
                         </a>
                     </div>
                 </section>
