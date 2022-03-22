@@ -176,7 +176,7 @@
                                 <td></td>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody :if="players.length > 0">
                             <tr class="player" :for="players as index => player">
                                 <td>{{player.name}}</td>
                                 <td>{{player.height}}</td>
