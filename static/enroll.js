@@ -78,18 +78,21 @@ const app = new Rable({
         },
 
         finish() {
-            if (this.players.length < 1) {
-                this.errorMessage = 'Er moeten minstens 2 spelers in een team zitten.'
-                return;
-            }
-
             const data = new FormData(document.querySelector('form'));
-            this.players.forEach((player, index) => {
-                let prefix = 'player' + (index + 2) + '-';
-                data.set(prefix + 'name', player.name);
-                data.set(prefix + 'height', player.height);
-                data.set(prefix + 'age', player.age);
-            });
+
+            if (this.tournament2 && this.teamregistration) {
+                if (this.players.length < 1) {
+                    this.errorMessage = 'Er moeten minstens 2 spelers in een team zitten.'
+                    return;
+                }
+
+                this.players.forEach((player, index) => {
+                    let prefix = 'player' + (index + 2) + '-';
+                    data.set(prefix + 'name', player.name);
+                    data.set(prefix + 'height', player.height);
+                    data.set(prefix + 'age', player.age);
+                });
+            }
 
             fetch(location.href, {
                 method: 'post',
