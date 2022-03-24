@@ -47,6 +47,8 @@
                 <th class="smaller">ID</th>
                 <th>Name</th>
                 <th>E-mail</th>
+                <th>T1</th>
+                <th>T2</th>
                 <th>Created</th>
                 <th>Updated</th>
                 <th>Acties</th>
@@ -62,6 +64,12 @@
                 </td>
                 <td>
                     {{ player.email }}
+                </td>
+                <td>
+                    {{ player.tournament1 ? "Ja" : "Nee" }}
+                </td>
+                <td>
+                    {{ player.tournament2 ? "Ja" : "Nee" }}
                 </td>
                 <td>
                     {{ player.created }}

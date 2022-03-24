@@ -73,6 +73,8 @@
                     $type = $users->metaGet($current['id'], 'type');
                     if ($type && $type == 'player') {
                         unset($current['password']);
+                        $current['tournament1'] = intval($users->metaGet($current['id'], 'tournament1')) == 1;
+                        $current['tournament2'] = intval($users->metaGet($current['id'], 'tournament2')) == 1;
                         array_push($players, $current);
                     }
                 }
