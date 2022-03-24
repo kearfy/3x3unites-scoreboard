@@ -111,7 +111,6 @@
                 </button>
             </section>
         </form>
-        <?php require_once(DYNAMIC_DIR . '/modules/scoreboard/partials/footer.php'); ?>
 
         <?php require_once(DYNAMIC_DIR . '/modules/scoreboard/partials/help-button.php'); ?>
 
