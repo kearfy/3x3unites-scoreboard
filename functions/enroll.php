@@ -133,7 +133,7 @@
                             <p>15:45</p>
                         </div>
                         <p>
-                            Inschrijving als team 16+ <br>
+                            Inschrijving als team 15+ <br>
                             Individuele inschrijving ook mogelijk
                         </p>
                         <div class="checkbox">
