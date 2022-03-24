@@ -25,7 +25,7 @@
 
                     <br>
                     <p>
-                        Registraties staan open!<br><br>
+                        <?=$signedin ? "Inschrijvingen staan open!" : "Registraties staan open!"?><br><br>
                         <?=$signedin ? "Je kunt je nu direct inschrijven!" : "Spelers kunnen zich registreren en een team aanmaken."?>
                     </p>
 
