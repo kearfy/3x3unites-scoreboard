@@ -3,6 +3,8 @@
         <p>
             Powered by
         </p>
-        <img src="<?=SITE_LOCATION?>public/pb-pubfiles/img/pb-logos/full-dark.svg" alt="pbcms">
+        <a href="https://pbcms.io">
+            <img src="<?=SITE_LOCATION?>public/pb-pubfiles/img/pb-logos/full-dark.svg" alt="pbcms">
+        </a>
     </div>
 </footer>
