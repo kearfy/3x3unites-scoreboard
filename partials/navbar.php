@@ -31,9 +31,11 @@
         <?php showSignedin($signedin, '<a href="/enroll">' . ($enrolled ? "Inschrijving" : "Inschrijven") . '</a>'); ?>
     </section>
     <section class="middle">
-        <div class="logo-container">
-            <img src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/logo_white.svg" alt="3x3unites logo">
-        </div>
+        <a href="https://www.3x3unites.com">
+            <div class="logo-container">
+                <img src="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/logo_white.svg" alt="3x3unites logo">
+            </div>
+        </a>
     </section>
     <section class="right">
         <?php showSignedout($signedin, '<a href="/signin">Inloggen</a>'); ?>
