@@ -9,8 +9,8 @@
             $users = new Users;
             $players = array();
             foreach($users->list() as $current) {
-                $player = $users->metaGet($current['id'], 'type') == 'player';
-                $teamadmin = $users->metaGet($current['id'], 'teamadmin') == '1';
+                $player = $users->metaGet($current->id, 'type') == 'player';
+                $teamadmin = $users->metaGet($current->id, 'teamadmin') == '1';
                 if ($player && !$teamadmin) {
                     $item = (object) $current;
                     if ($users->metaGet($item->id, 'profile-filled') == '1') {
@@ -70,11 +70,11 @@
             if ($userModel->check('site.tournament-admin')) {
                 $players = array();
                 foreach($users->list() as $current) {
-                    $type = $users->metaGet($current['id'], 'type');
+                    $type = $users->metaGet($current->id, 'type');
                     if ($type && $type == 'player') {
-                        unset($current['password']);
-                        $current['tournament1'] = intval($users->metaGet($current['id'], 'tournament1')) == 1;
-                        $current['tournament2'] = intval($users->metaGet($current['id'], 'tournament2')) == 1;
+                        unset($current->password);
+                        $current->tournament1 = intval($users->metaGet($current->id, 'tournament1')) == 1;
+                        $current->tournament2 = intval($users->metaGet($current->id, 'tournament2')) == 1;
                         array_push($players, $current);
                     }
                 }
