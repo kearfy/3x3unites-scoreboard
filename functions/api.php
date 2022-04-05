@@ -83,6 +83,36 @@
             } else {
                 die('not authorized');
             }
+        } else if ($params[0] == 'stats') {
+            $users = new Users;
+            $controller = new Controller;
+            $objectManager = new Objects;
+            $userModel = $controller->__model('user');
+            
+            if ($userModel->check('site.tournament-admin')) {
+                $stats = (object) array(
+                    "players" => 0,
+                    "tournament1" => 0,
+                    "tournament2" => 0,
+                    "teams" => 0
+                );
+
+                foreach($users->list() as $current) {
+                    $type = $users->metaGet($current->id, 'type');
+                    if ($type && $type == 'player') {
+                        $stats->players++;
+                        if (intval($users->metaGet($current->id, 'tournament1')) == 1) $stats->tournament1++;
+                        if (intval($users->metaGet($current->id, 'tournament2')) == 1) {
+                            $stats->tournament2++;
+                            if ($objectManager->exists('scoreboard-team', 'team-' . $current->id)) $stats->teams++;
+                        }
+                    }
+                }
+
+                Respond::JSON($stats);
+            } else {
+                die('not authorized');
+            }
         } else {
             die('unknown api');
         }

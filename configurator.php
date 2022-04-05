@@ -7,6 +7,43 @@
     </p>
 </section>
 
+<section class="stats transparent no-margin">
+    <table>
+        <tr>
+            <th>
+                Spelers
+            </th>
+            <td>
+                {{ stats.players }}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Teams
+            </th>
+            <td>
+                {{ stats.teams }}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Toernooi 1
+            </th>
+            <td>
+                {{ stats.tournament1 }}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Toernooi 2
+            </th>
+            <td>
+                {{ stats.tournament2 }}
+            </td>
+        </tr>
+    </table>
+</section>
+
 <section class="transparent no-margin overflow-scroll">
     <table>
         <thead>
