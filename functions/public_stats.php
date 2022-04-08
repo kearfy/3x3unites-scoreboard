@@ -31,7 +31,7 @@
 
                     <div class="button-container">
                         <a href="/<?=$signedin ? "enroll" : "signup"?>" class="button">
-                            <?=$signedin ? "Inschrijven" : "Registreren"?>
+                        <?=$signedin ? "Inschrijven" : "Registreren"?>
                         </a>
                     </div>
                 </section>
