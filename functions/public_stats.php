@@ -25,8 +25,8 @@
 
                     <br>
                     <p>
-                        <?=$signedin ? "Inschrijvingen staan open!" : "Registraties staan open!"?><br><br>
-                        <?=$signedin ? "Je kunt je nu direct inschrijven!" : "Spelers kunnen zich registreren en een team aanmaken."?>
+                        <?=$signedin ? "Inschrijvingen zijn gesloten!" : "Registraties staan open!"?><br><br>
+                        <?=$signedin ? "Hier komen de statestieken van het toernooi!" : "Spelers kunnen een account aanmaken"?>
                     </p>
 
                     <div class="button-container">
