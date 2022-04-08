@@ -25,7 +25,7 @@
 
                     <br>
                     <p>
-                        <?=$signedin ? "Inschrijvingen zijn gesloten!" : "Registraties staan open!"?><br><br>
+                        <?=$signedin ? "Inschrijvingen zijn gesloten!" : "Registreren kan nog"?><br><br>
                         <?=$signedin ? "Hier komen de statestieken van het toernooi!" : "Spelers kunnen een account aanmaken"?>
                     </p>
 
