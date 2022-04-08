@@ -274,13 +274,13 @@
             </section>
             <section class="title">
                 <h1>
-                    Wordt later vandaag geopend
+                    Inschrijvingen zijn gesloten
                 </h1>
             </section> 
 
             <section class="note">
                 <p>
-                    Teamregistratie wordt later geopend.
+                    Helaas, je bent telaat.
                 </p>
             </section>
         </form>
