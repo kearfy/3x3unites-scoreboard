@@ -28,12 +28,14 @@
                         <?=$signedin ? "Inschrijvingen zijn gesloten!" : "Registreren kan nog"?><br><br>
                         <?=$signedin ? "Hier komen de statestieken van het toernooi!" : "Spelers kunnen een account aanmaken"?>
                     </p>
-
-                    <div class="button-container">
-                        <a href="/<?=$signedin ? "enroll" : "signup"?>" class="button">
-                        <?=$signedin ? "Inschrijven" : "Registreren"?>
-                        </a>
-                    </div>
+                    <?php if (!$signedin) { ?>
+                        <div class="button-container">
+                            <a href="/<?=$signedin ? "enroll" : "signup"?>" class="button">
+                            <?=$signedin ? "Inschrijven" : "Registreren"?>
+                            </a>
+                        </div>
+                    <?php } ?>
+                    <br>
                 </section>
                 <section class="dates-overview">
                     <h2>
