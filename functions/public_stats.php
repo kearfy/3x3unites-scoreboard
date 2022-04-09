@@ -129,7 +129,351 @@
                         * De indeling kan iets afwijken of nog worden aangepast.
                     </p>
                 </section>
-            </div>
+            </div>    
+            <div class="sections-container">
+                <section class="teams">
+                    <h2>Toernooi 1 teams</h2>
+                    <br>
+                    <table class="grouping">
+                        <thead>
+                            <tr>
+                                <th>Team 1</th>
+                                <th>Team 2</th>
+                                <th>Team 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Arman Sedaghati Ghamsari
+                                </td>
+                                <td>
+                                    Chant Balci
+                                </td>
+                                <td>
+                                    Michael Siman
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Erfan Sedaghati Ghamsari
+                                </td>
+                                <td>
+                                    Daniël Looze
+                                </td>
+                                <td>
+                                    Mani Adjodha
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Rishaan Sriram
+                                </td>
+                                <td>
+                                    Julian Klaassen
+                                </td>
+                                <td>
+                                    Boran Celik
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Rithvik Sriram
+                                </td>
+                                <td>
+                                    Sven de Raadt
+                                </td>
+                                <td>
+                                    Rohin Azizi
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="grouping">
+                        <thead>
+                            <tr>
+                                <th>Team 4</th>
+                                <th>Team 5</th>
+                                <th>Team 6</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Silvano Boersma
+                                </td>
+                                <td>
+                                    Özgür Gündogdu
+                                </td>
+                                <td>
+                                    Aman chamlingray
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Daniël Rietveld
+                                </td>
+                                <td>
+                                    Yassin Elyaqouti
+                                </td>
+                                <td>
+                                    Liam Ahern
+                                </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td>
+                                    Joa Chen
+                                </td>
+                                <td>
+                                    Roman Alberg
+                                </td>
+                                <td>
+                                   Rosa Piet
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Ravi de Zeeuw
+                                </td>
+                                <td>
+                                    Finn Westerwaal
+                                </td>
+                                <td>
+                                    Kibo Noteborn
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <br>
+                    <p>Op het toernooi schema zijn de uitslagen te volgen tijdens het toernament!</p>
+                </section>
+                <section class="scedual">
+                    <h2>Toernooi 1 schema</h2>
+                    <br>
+                    <table class="grouping">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Ronde 1</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Team 2
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    Team 5
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team 3
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Team 6
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team 4
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Team 1
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="grouping">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Ronde 2</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Team 1
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    Team 3
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team 5
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Team 4
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team 6
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Team 2
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="grouping">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Ronde 3</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Team 2
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    Team 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team 3
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Team 4
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team 6
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Team 5
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="grouping">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Ronde 4</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Team 1
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    Team 6
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team 3
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Team 5
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team 4
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Team 2
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="grouping">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Ronde 5</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Team 2
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    Team 3
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team 5
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Team 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team 6
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Team 4
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>    
         </div>
         
         <?php require_once(DYNAMIC_DIR . '/modules/scoreboard/partials/footer.php'); ?>
