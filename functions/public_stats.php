@@ -506,7 +506,7 @@
                                     Team 3
                                 </td>
                                 <td>
-                                    Chant Balci
+                                    Bye
                                 </td>
                                 <td>
                                     Poule A
@@ -607,7 +607,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    Team 3
+                                    Bye
                                 </td>
                                 <td>
                                     
@@ -655,7 +655,7 @@
 
                                 </td>
                                 <td>
-                                    Team 3
+                                    Bye
                                 </td>
                             </tr>
                         </tbody>
@@ -675,7 +675,7 @@
                                     
                                 </td>
                                 <td>
-                                    Team 3
+                                    Bye
                                 </td>
                             </tr>
                             <tr>
@@ -711,7 +711,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Team 3
+                                    Bye
                                 </td>
                                 <td>
 
