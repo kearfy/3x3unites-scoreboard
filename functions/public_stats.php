@@ -161,10 +161,10 @@
                                     Erfan Sedaghati Ghamsari
                                 </td>
                                 <td>
-                                    Daniël Looze
+                                    Dana
                                 </td>
                                 <td>
-                                    Mani Adjodha
+                                    Lucas
                                 </td>
                             </tr>
                             <tr>
@@ -228,7 +228,7 @@
                                     Joa Chen
                                 </td>
                                 <td>
-                                    Roman Alberg
+                                    Amy
                                 </td>
                                 <td>
                                    Rosa Piet
