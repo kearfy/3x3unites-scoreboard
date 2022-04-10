@@ -1016,13 +1016,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Lozer F1.1
+                                    Lozer F1
                                 </td>
                                 <td>
                                     F2
                                 </td>
                                 <td>
-                                    Lozer F1.2
+                                    Lozer F1
                                 </td>
                             </tr>
                         </tbody>
