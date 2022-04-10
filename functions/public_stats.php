@@ -266,7 +266,7 @@
                                     Team 2
                                 </td>
                                 <td>
-                                    
+                                    6-9
                                 </td>
                                 <td>
                                     Team 5
@@ -277,7 +277,7 @@
                                     Team 3
                                 </td>
                                 <td>
-
+                                    10-6
                                 </td>
                                 <td>
                                     Team 6
@@ -288,7 +288,7 @@
                                     Team 4
                                 </td>
                                 <td>
-
+                                    16-7
                                 </td>
                                 <td>
                                     Team 1
