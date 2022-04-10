@@ -768,6 +768,37 @@
                         <tbody>
                             <tr>
                                 <td>
+                                    Team 9
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    Team 10
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team 8
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Team 6
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="grouping">
+                        <thead>
+                            <tr>
+                                <th colspan=3>Ronde 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
                                     Team 6
                                 </td>
                                 <td>
@@ -786,37 +817,6 @@
                                 </td>
                                 <td>
                                     Team 8
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="grouping">
-                        <thead>
-                            <tr>
-                                <th colspan=3>Ronde 2</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Team 8
-                                </td>
-                                <td>
-                                    
-                                </td>
-                                <td>
-                                    Team 6
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Team 9
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    Team 10
                                 </td>
                             </tr>
                         </tbody>
