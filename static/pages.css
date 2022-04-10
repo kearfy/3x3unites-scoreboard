@@ -221,3 +221,29 @@ table.dates tbody td:not(:first-child) {
 .dates-overview {
 	overflow-x: auto;
 }
+
+.public_stats section {
+	overflow-x: auto;
+}
+
+.public_stats section table thead th {
+	min-width: 100px;
+}
+
+.schedual thead th {
+	text-align: center;
+	min-width: 300px !important;
+}
+
+.schedual.final thead th {
+	min-width: 600px !important;
+}
+
+.schedual tbody td:nth-child(2) {
+	text-align: center;
+}
+
+
+.schedual tbody td:nth-child(3) {
+	text-align: right;
+}
