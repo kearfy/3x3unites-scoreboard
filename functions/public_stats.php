@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/default.css">
         <link rel="stylesheet" href="<?php echo SITE_LOCATION; ?>/pb-loader/module-static/scoreboard/pages.css">
     </head>
-    <body>
+    <body class="public_stats">
         <?php require_once(DYNAMIC_DIR . '/modules/scoreboard/partials/navbar.php'); ?>
         
         <div class="content">
@@ -251,15 +251,13 @@
                     <br>
                     <p>Op het toernooi schema zijn de uitslagen te volgen tijdens het toernament!</p>
                 </section>
-                <section class="schedual">
+                <section class="schedual center-head">
                     <h2>Toernooi 1 schema</h2>
                     <br>
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 1</th>
-                                <th></th>
+                                <th colspan=3>Ronde 1</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -301,9 +299,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 2</th>
-                                <th></th>
+                                <th colspan=3>Ronde 2</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -345,9 +341,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 3</th>
-                                <th></th>
+                                <th colspan=3>Ronde 3</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -389,9 +383,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 4</th>
-                                <th></th>
+                                <th colspan=3>Ronde 4</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -433,9 +425,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 5</th>
-                                <th></th>
+                                <th colspan=3>Ronde 5</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -611,9 +601,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 1</th>
-                                <th></th>
+                                <th colspan=3>Ronde 1</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -644,9 +632,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 2</th>
-                                <th></th>
+                                <th colspan=3>Ronde 2</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -677,9 +663,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 3</th>
-                                <th></th>
+                                <th colspan=3>Ronde 3</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -710,9 +694,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 4</th>
-                                <th></th>
+                                <th colspan=3>Ronde 4</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -743,9 +725,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 5</th>
-                                <th></th>
+                                <th colspan=3>Ronde 5</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -782,9 +762,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 1</th>
-                                <th></th>
+                                <th colspan=3>Ronde 1</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -815,9 +793,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 2</th>
-                                <th></th>
+                                <th colspan=3>Ronde 2</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -848,9 +824,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 3</th>
-                                <th></th>
+                                <th colspan=3>Ronde 3</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -881,9 +855,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 4</th>
-                                <th></th>
+                                <th colspan=3>Ronde 4</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -914,9 +886,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 5</th>
-                                <th></th>
+                                <th colspan=3>Ronde 5</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -945,15 +915,13 @@
                         </tbody>
                     </table>
                 </section>
-                <section class="schedual">
+                <section class="schedual final">
                     <h2>Toernooi 2 schema (Finals)</h2>
                     <br>
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 1</th>
-                                <th></th>
+                                <th colspan=3>Ronde 1</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -997,9 +965,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 2</th>
-                                <th></th>
+                                <th colspan=3>Ronde 2</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1032,9 +998,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 3</th>
-                                <th></th>
+                                <th colspan=3>Ronde 3</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1056,9 +1020,7 @@
                     <table class="grouping">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Ronde 4</th>
-                                <th></th>
+                                <th colspan=3>Ronde 4</th>
                             </tr>
                         </thead>
                         <tbody>
