@@ -583,7 +583,7 @@
                                     Team 10
                                 </td>
                                 <td>
-                                    Liam Ahern
+                                    Bye
                                 </td>
                                 <td>
                                     Poule B
@@ -774,7 +774,7 @@
                                     
                                 </td>
                                 <td>
-                                    Team 10
+                                    Bye
                                 </td>
                             </tr>
                             <tr>
@@ -830,7 +830,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    Team 10
+                                    Bye
                                 </td>
                                 <td>
                                     
@@ -867,7 +867,7 @@
                                     
                                 </td>
                                 <td>
-                                    Team 10
+                                    Bye
                                 </td>
                             </tr>
                             <tr>
@@ -903,7 +903,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Team 10
+                                    Bye
                                 </td>
                                 <td>
 
