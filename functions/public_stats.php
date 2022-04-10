@@ -607,37 +607,6 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    Team 1
-                                </td>
-                                <td>
-                                    
-                                </td>
-                                <td>
-                                    Team 4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Team 2
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    Team 3
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="grouping">
-                        <thead>
-                            <tr>
-                                <th colspan=3>Ronde 2</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
                                     Team 3
                                 </td>
                                 <td>
@@ -656,6 +625,37 @@
                                 </td>
                                 <td>
                                     Team 5
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="grouping">
+                        <thead>
+                            <tr>
+                                <th colspan=3>Ronde 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Team 1
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    Team 4
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Team 2
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    Team 3
                                 </td>
                             </tr>
                         </tbody>
